@@ -1,0 +1,77 @@
+/* Add this CSS to your stylesheets */
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.line-left {
+    position: absolute;
+    height: 2px;
+    width: 0%;
+    background-color: yellow;
+    animation: lineAnimationleft 2s ease-out forwards;
+}
+
+.line-right {
+    position: absolute;
+    height: 2px;
+    width: 0%;
+    background-color: yellow;
+    animation: lineAnimationright 2s ease-out forwards;
+}
+
+@keyframes lineAnimationleft {
+    0% {
+        left: 0;
+        right: 100%;
+        width: 0%;
+    }
+
+    50% {
+        left: 0;
+        right: 50%;
+        width: 50%;
+    }
+
+    100% {
+        left: 0;
+        right: 50%;
+        width: 50%;
+    }
+}
+
+@keyframes lineAnimationright {
+    0% {
+        left: 100%;
+        right: 0;
+        width: 0%;
+    }
+
+    50% {
+        left: 50%;
+        right: 0;
+        width: 50%;
+    }
+
+    100% {
+        left: 50%;
+        right: 0;
+        width: 50%;
+    }
+}
+
+/* Add your regular content styles below this line */
