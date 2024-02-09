@@ -2,7 +2,7 @@
 
 body {
     margin: 0;
-    overflow: hidden;
+    background: linear-gradient(to bottom, #262626, #262626);
 }
 
 .preloader {
@@ -11,7 +11,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #fff;
+    background-color: #25211e;
     display: flex;
     align-items: center;
     justify-content: center;
