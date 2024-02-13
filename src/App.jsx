@@ -8,6 +8,7 @@ import Edu from './components/Edu';
 import Divider from './components/Divider';
 import About from './components/About';
 import Exp from './components/Exp';
+import Stack from './components/Stack';
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme({
@@ -48,6 +49,7 @@ function App() {
               <About />
               <Edu />
               <Exp />
+              <Stack />
             </main>
             <Footer />
           </ThemeProvider>

@@ -28,6 +28,7 @@ function Intro() {
             </div>
             <div className="level">
                 <div className="age">23<br></br><p>LV</p></div>
+                <div className="name">Irfan Zafri</div>
             </div>
             <div className="intro-desc">
                 <p>Greetings! I&apos;m Irfan Zafri. I&apos;m  interested with frontend development  and machine learning technologies. Do check out my other details down below.

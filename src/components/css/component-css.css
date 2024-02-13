@@ -2,18 +2,31 @@
     height: 600px;
 }
 
+.content {
+    margin-top: 100px;
+}
+
+.section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
 .section-title {
     color: #fff;
     font-size: 150px;
     font-weight: bold;
     position: absolute;
     left: -26px;
+    bottom: 220px;
     display: flex;
     justify-content: center;
     padding-left: 15px;
     padding-right: 15px;
     width: max-content;
-    margin: -375px 0 10px 0;
     opacity: 0.5;
 }
 
@@ -125,7 +138,7 @@
     height: 45px;
     position: absolute;
     background-color: #333333;
-    margin-top: 365px;
+    margin-top: 360px;
     margin-left: calc(50% - 510px);
     z-index: -1;
 }
@@ -150,6 +163,14 @@
     margin-top: -17px;
 }
 
+.name {
+    color: #fff;
+    position: absolute;
+    right: -30px;
+    bottom: -42px;
+    font-size: 30px;
+}
+
 .divider {
     width: 100%;
     height: 50px;
@@ -158,6 +179,14 @@
 
 /* About Section    */
 
+.section.about {
+    margin-top: 110px;
+}
+
+.section-title.about {
+    bottom: 220px;
+}
+
 .about-content {
     color: #fff;
     text-align: justify;
@@ -165,18 +194,12 @@
 
 /* Education Section    */
 
-.edu-section {
-    margin-top: 38px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 422px;
+.edu-content {
+    margin-top: 122px;
 }
 
-.edu-content {
-    margin-top: 75px;
+.section-title.edu {
+    top: -50px;
 }
 
 .edu-selector {
@@ -190,8 +213,8 @@
 .edu-selector::after {
     content: '';
     position: absolute;
-    top: 138px;
-    bottom: 120px;
+    top: 225px;
+    bottom: 157px;
     margin-left: -25px;
     width: 2px;
     background-color: #fff;
@@ -239,8 +262,15 @@
 
 /* Experience Section    */
 
+.exp-content {
+    margin-top: 140px;
+}
+
+.section-title.exp {
+    top: -50px;
+}
+
 .exp-section {
-    margin-top: 38px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -253,23 +283,15 @@
     margin-top: 265px;
 }
 
-.exp-content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .exp-selector {
+    position: relative;
+    font-size: 30px;
+    font-weight: 600;
     background-color: #b2b2b2;
     text-align: center;
     padding: 20px;
+    width: 100%;
 }
-
-.exp-selector.fusionex {}
-
-.exp-selector.recite {}
 
 .exp-selected-content {
     height: auto;
@@ -285,5 +307,126 @@
 }
 
 .exp-desc {
+    font-size: 20px;
+    display: flex;
+    z-index: -1;
+    height: 300px;
+    background-color: grey;
     color: #fff;
+    padding: 20px 20px 20px 36px;
+    margin-left: -17px;
+}
+
+.exp-selector-content {}
+
+.recite-logo {
+    position: absolute;
+    width: 100px;
+    top: 0;
+    right: 0;
+    height: 72px;
+    width: 70px;
+    margin-top: 6px;
+    margin-right: -10px;
+}
+
+.fusion-logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 72px;
+    width: 70px;
+    margin-top: 6px;
+    margin-right: -10px;
+    border: solid #fff 8px;
+}
+
+.fusion-office {
+    position: relative;
+    clip-path: polygon(0% 0%, 95% 0, 100% 50%, 95% 100%, 0% 100%);
+}
+
+/* Stack Section */
+
+.section-title.stack {
+    top: -50px;
+}
+
+.stack-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.stack-content {
+    margin-top: 115px;
+}
+
+.stack-item {
+    display: flex;
+    justify-content: center;
+    height: 400px;
+}
+
+.stack-item.details {
+    /* clip-path: polygon(0 0, 81% 0, 100% 100%, 0% 100%); */
+    margin-right: -30%;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    position: relative;
+    z-index: -1;
+    color: #fff;
+    padding: 25px;
+}
+
+.stack-item.logo {
+    /* clip-path: polygon(0 0, 100% 0, 70% 100%, 30% 100%); */
+    position: relative;
+    z-index: -2;
+}
+
+.stack-item.list {
+    /* clip-path: polygon(19% 0, 100% 0, 100% 100%, 0% 100%); */
+    margin-right: 5%;
+    position: relative;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    z-index: -1;
+}
+
+.selected-logo {}
+
+.stack-grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+    width: auto;
+    height: auto;
+    gap: 10px 10px;
+}
+
+.stack-grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    height: 100px;
+    width: 100px;
+}
+
+/* Apply left margin for each row starting from the second row */
+.stack-grid-item:nth-child(n + 5) {
+    margin-left: -10px;
+    /* Adjust margin as needed */
+}
+
+.stack-grid-item:nth-child(n + 9) {
+    margin-left: -20px;
+    /* Adjust margin as needed */
 }
