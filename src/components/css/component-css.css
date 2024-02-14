@@ -262,25 +262,12 @@
 
 /* Experience Section    */
 
-.exp-content {
-    margin-top: 140px;
-}
-
 .section-title.exp {
     top: -50px;
 }
 
-.exp-section {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-}
-
-.exp-container {
-    margin-top: 265px;
+.exp-content {
+    margin-top: 140px;
 }
 
 .exp-selector {
@@ -352,15 +339,6 @@
     top: -50px;
 }
 
-.stack-section {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-}
-
 .stack-content {
     margin-top: 115px;
 }
@@ -390,8 +368,6 @@
 }
 
 .stack-item.list {
-    /* clip-path: polygon(19% 0, 100% 0, 100% 100%, 0% 100%); */
-    margin-right: 5%;
     position: relative;
     display: flex;
     justify-content: end;
@@ -399,9 +375,18 @@
     z-index: -1;
 }
 
-.selected-logo {}
+.stack-list-background {
+    position: absolute;
+    clip-path: polygon(19% 0, 100% 0, 100% 100%, 0% 100%);
+    width: 100%;
+    height: 100%;
+    background-color: #292929;
+    z-index: -1;
+}
 
 .stack-grid {
+    position: absolute;
+    left: 0;
     display: grid;
     grid-template-columns: auto auto auto auto;
     padding: 10px;
@@ -411,22 +396,127 @@
 }
 
 .stack-grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(78, 78, 78, 1) 0%, rgba(49, 49, 49, 1) 100%);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-size: 30px;
     text-align: center;
     height: 100px;
     width: 100px;
+    overflow: hidden;
 }
 
-/* Apply left margin for each row starting from the second row */
 .stack-grid-item:nth-child(n + 5) {
-    margin-left: -10px;
-    /* Adjust margin as needed */
+    margin-left: -15px;
 }
 
 .stack-grid-item:nth-child(n + 9) {
-    margin-left: -20px;
-    /* Adjust margin as needed */
+    margin-left: -25px;
+}
+
+.stack-small-logo {
+    width: 90px;
+    height: auto;
+}
+
+.selected-logo {
+    width: 500px;
+    height: 500px;
+}
+
+/* Projects Section */
+
+.section.project {
+    margin-top: 110px;
+}
+
+.section-title.project {
+    top: -50px;
+}
+
+.project-content {
+    margin-top: 140px;
+}
+
+.project-grid {
+    position: flex;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    padding: 10px;
+    width: auto;
+    height: auto;
+    gap: 10px 10px;
+}
+
+.project-grid-item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(78, 78, 78, 1) 0%, rgba(49, 49, 49, 1) 100%);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: 30px;
+    text-align: center;
+    height: 300px;
+    width: 150px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.project-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(1px);
+    /* Adjust the blur amount */
+}
+
+/* Add the overlay for the blur effect */
+.project-grid-item::before {
+    content: '';
+    /* Required for pseudo-elements */
+    position: absolute;
+    top: 0;
+    /* Position at the top */
+    left: 0;
+    right: 0;
+    height: 50px;
+    /* Adjust the height as needed */
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+    /* Blurred overlay color */
+    filter: blur(5px);
+    /* Adjust the blur amount */
+    z-index: 1;
+    /* Ensure the overlay is above the image */
+}
+
+.project-grid-item::after {
+    content: '';
+    /* Required for pseudo-elements */
+    position: absolute;
+    bottom: 0;
+    /* Position at the bottom */
+    left: 0;
+    right: 0;
+    height: 50px;
+    /* Adjust the height as needed */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), transparent);
+    /* Blurred overlay color */
+    filter: blur(5px);
+    /* Adjust the blur amount */
+    z-index: 1;
+    /* Ensure the overlay is above the image */
+}
+
+.project-name {
+    color: #fff;
+    position: absolute;
+    bottom: 30px;
+    font-size: 16px;
+    z-index: 999;
 }

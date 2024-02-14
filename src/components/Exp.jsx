@@ -7,7 +7,7 @@ import fusionlogo from '../assets/images/fusionex.jpg';
 
 function Exp() {
     return (
-        <div className='exp-section'>
+        <div className='section exp'>
             <div className="section-title exp">
                 Experience.
             </div>

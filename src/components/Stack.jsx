@@ -1,11 +1,11 @@
 import Grid from '@mui/material/Grid';
 
-import nodejs from '../assets/images/node.webp';
+import nodejs from '../assets/images/nodejsv2.png';
 
 
 function Stack() {
     return (
-        <div className='stack-section'>
+        <div className='section stack'>
             <div className="section-title stack">
                 Stacks.
             </div>
@@ -18,13 +18,18 @@ function Stack() {
                 </Grid>
                 <Grid item xs={3} sm={3} md={3}>
                     <div className="stack-item logo">
-                        <img src={nodejs} alt="Fusionex" className='selected-logo' />
+                        <img src={nodejs} alt="NodeJS" className='selected-logo' />
                     </div>
                 </Grid>
                 <Grid item xs={4} sm={4} md={4}>
                     <div className="stack-item list">
+                        <div className="stack-list-background">
+                            <br></br>
+                        </div>
                         <div className="stack-grid">
-                            <div className="stack-grid-item">1</div>
+                            <div className="stack-grid-item">
+                                <img src={nodejs} alt="NodeJS" className='stack-small-logo' />
+                            </div>
                             <div className="stack-grid-item">2</div>
                             <div className="stack-grid-item">3</div>
                             <div className="stack-grid-item">4</div>
