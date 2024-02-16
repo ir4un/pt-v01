@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import { motion } from "framer-motion";
 
 import videoFile from '../assets/videos/animated-bliss.mp4';
 import pfpImg from '../assets/images/irfan-selfcleararm.png';
@@ -26,19 +27,32 @@ function Intro() {
             <div className='pfpContainer'>
                 <img src={pfpImg} alt="Your Image" className='pfpImg' />
             </div>
-            <div className="level">
-                <div className="age">23<br></br><p>LV</p></div>
+            <motion.div
+                className="level"
+                initial={{ opacity: 0, x: -200 }} // Initial position is off the screen to the left
+                animate={{ opacity: 1, x: 0 }} // Animate to original position (0) on the x-axis
+                transition={{ duration: 1 }} // Transition duration of 1 second
+            >
+                <div className="age">
+                    23
+                    <br />
+                    <p>LV</p>
+                </div>
                 <div className="name">Irfan Zafri</div>
-            </div>
-            <div className="intro-desc">
+            </motion.div>
+            <motion.div
+                className="intro-desc"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}>
                 <p>Greetings! I&apos;m Irfan Zafri. I&apos;m  interested with frontend development  and machine learning technologies. Do check out my other details down below.
                 </p>
-            </div>
+            </motion.div>
             <Box
                 sx={{ pt: 8, pb: 6, }}>
                 <Container>
                     <Grid container
-                        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+                        columnSpacing={{ xs: 2 }}
                         alignItems="center"
                         justifyContent="center">
                         <Grid item xs={12} sm={6}>
@@ -46,47 +60,104 @@ function Intro() {
 
                         <Grid item xs={12} sm={6}>
                             <Grid container
-                                columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+                                columnSpacing={{ xs: 2 }}
                                 rowSpacing={2}
                                 alignItems="center"
-                                justifyContent="center">
+                                justifyContent="center"
+                            >
                                 <Grid item xs={12} sm={12}>
-                                    <div className='intro-btn-big'>
+                                    <motion.div
+                                        className='intro-btn-big'
+                                        initial={{ opacity: 0, }}
+                                        animate={{ opacity: 0.85, }}
+                                        transition={{ duration: 0.8 }}
+                                        whileHover={{ backgroundColor: '#b2b2b2', transition: { duration: 0 } }}
+                                        whileTap={{ backgroundColor: 'rgb(158, 158, 158)', transition: { duration: 0 } }}
+                                    >
                                         <div className='welcome-btn'>
                                             <img src={sanity} alt="Sanity" />
                                         </div>
                                         Welcome!
-                                    </div>
+                                    </motion.div>
                                 </Grid>
+
                                 <Grid item xs={6} sm={6}>
-                                    <div className='intro-btn-small'>
+                                    <motion.div
+                                        className='intro-btn-small'
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 0.85 }}
+                                        transition={{ duration: 0.8, delay: 0.2 }}
+                                        whileHover={{ backgroundColor: '#b2b2b2', transition: { duration: 0 } }}
+                                        whileTap={{ backgroundColor: 'rgb(158, 158, 158)', transition: { duration: 0 } }}
+                                    >
                                         Education
-                                    </div>
+                                    </motion.div>
                                 </Grid>
+
                                 <Grid item xs={6} sm={6}>
-                                    <div className='intro-btn-small'>
+                                    <motion.div
+                                        className='intro-btn-small'
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 0.85 }}
+                                        transition={{ duration: 0.8, delay: 0.2 }}
+                                        whileHover={{ backgroundColor: '#b2b2b2', transition: { duration: 0 } }}
+                                        whileTap={{ backgroundColor: 'rgb(158, 158, 158)', transition: { duration: 0 } }}
+                                    >
                                         Experience
-                                    </div>
+                                    </motion.div>
                                 </Grid>
+
                                 <Grid item xs={6} sm={6}>
-                                    <div className='intro-btn-blue'>
+                                    <motion.div
+                                        className='intro-btn-blue'
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ duration: 0.8, delay: 0.2 }}
+                                        whileHover={{ backgroundColor: '#0682ab', transition: { duration: 0 } }}
+                                        whileTap={{ backgroundColor: '#045b77', transition: { duration: 0 } }}
+                                    >
                                         Projects
-                                    </div>
+                                    </motion.div>
                                 </Grid>
+
                                 <Grid item xs={6} sm={6}>
-                                    <div className='intro-btn-blue'>
+                                    <motion.div
+                                        className='intro-btn-blue'
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ duration: 0.8, delay: 0.2 }}
+                                        whileHover={{ backgroundColor: '#0682ab', transition: { duration: 0 } }}
+                                        whileTap={{ backgroundColor: '#045b77', transition: { duration: 0 } }}
+                                    >
                                         Stacks
-                                    </div>
+                                    </motion.div>
                                 </Grid>
+
                                 <Grid item xs={5} sm={5}>
-                                    <div className='intro-btn-small'>
+                                    <motion.div
+                                        className='intro-btn-small'
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 0.85 }}
+                                        transition={{ duration: 0.8, delay: 0.2 }}
+                                        whileHover={{ backgroundColor: '#b2b2b2', transition: { duration: 0 } }}
+                                        whileTap={{ backgroundColor: 'rgb(158, 158, 158)', transition: { duration: 0 } }}
+
+                                    >
                                         Contact
-                                    </div>
+                                    </motion.div>
                                 </Grid>
+
                                 <Grid item xs={7} sm={7}>
-                                    <div className='intro-btn-small'>
+                                    <motion.div
+                                        className='intro-btn-small'
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 0.85 }}
+                                        transition={{ duration: 0.8, delay: 0.2 }}
+                                        whileHover={{ backgroundColor: '#b2b2b2', transition: { duration: 0 } }}
+                                        whileTap={{ backgroundColor: 'rgb(158, 158, 158)', transition: { duration: 0 } }}
+                                    >
                                         Hobbies
-                                    </div>
+                                    </motion.div>
                                 </Grid>
                             </Grid>
                         </Grid>

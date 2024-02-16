@@ -4,6 +4,7 @@ import Container from '@mui/material/Container';
 // import example from '../assets/images/example.jpg';
 // import recitelogo from '../assets/images/reciteclearnoradius.png';
 import example from '../assets/images/test.jpg';
+import nodejs from '../assets/images/nodejsv2.png';
 
 function Project() {
     return (
@@ -18,22 +19,42 @@ function Project() {
                             <div className="project-grid-item">
                                 <img src={example} alt="Example" className='project-thumbnail' />
                                 <div className="project-name">Checkcar</div>
+                                <div className="project-stack-icon-grid">
+                                    <img src={nodejs} alt="NodeJS" className='project-stack-icon-item' />
+                                    <img src={nodejs} alt="NodeJS" className='project-stack-icon-item' />
+                                    <img src={nodejs} alt="NodeJS" className='project-stack-icon-item' />
+                                </div>
+                                <div className="project-desc">AI Powered Website to Identify and Retrieve Car Model Prices</div>
                             </div>
                             <div className="project-grid-item">
                                 <img src={example} alt="Example" className='project-thumbnail' />
                                 <div className="project-name">Checkcar</div>
+
+                                <div className="project-desc">AI Powered Website to Identify and Retrieve Car Model Prices</div>
+
                             </div>
                             <div className="project-grid-item">
                                 <img src={example} alt="Example" className='project-thumbnail' />
                                 <div className="project-name">Checkcar</div>
+                                <div className="project-desc">AI Powered Website to Identify and Retrieve Car Model Prices</div>
+
                             </div>
                             <div className="project-grid-item">
                                 <img src={example} alt="Example" className='project-thumbnail' />
                                 <div className="project-name">Checkcar</div>
+                                <div className="project-desc">AI Powered Website to Identify and Retrieve Car Model Prices</div>
+
                             </div>
                             <div className="project-grid-item">
                                 <img src={example} alt="Example" className='project-thumbnail' />
                                 <div className="project-name">Checkcar</div>
+                                <div className="project-desc">AI Powered Website to Identify and Retrieve Car Model Prices</div>
+
+                            </div>
+                            <div className="project-grid-item">
+                                <img src={example} alt="Example" className='project-thumbnail' />
+                                <div className="project-name">Checkcar</div>
+                                <div className="project-desc">AI Powered Website to Identify and Retrieve Car Model Prices</div>
                             </div>
                         </div>
                     </Grid>

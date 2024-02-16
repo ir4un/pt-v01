@@ -1,49 +1,52 @@
+import { useState } from 'react';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 
-import smksilogo from '../assets/images/smksilogo.png';
+import EduItem from './EduItem';
 
 
 function Edu() {
+
+    const [selectedEducation, setSelectedEducation] = useState('SPM');
+    const [isContentRevealed, setContentRevealed] = useState(true);
+
+    const handleEducationSelect = (education) => {
+        setSelectedEducation(education);
+        if (education != selectedEducation) {
+            setContentRevealed(false);
+            setTimeout(() => {
+                setContentRevealed(true);
+            }, 100);
+        }
+    };
     return (
         <div className='section edu'>
             <div className="section-title edu">
                 Education.
             </div>
-            <Container className="edu-content" sx={{ py: 8 }} maxWidth="md">
-                <Grid container spacing={4}>
-                    <Grid item xs={6} sm={6} md={6}>
-                        <div className="edu-selector">
-                            SPM
-                        </div>
-                        <div className="edu-selector">
-                            Diploma
-                        </div>
-                        <div className="edu-selector">
-                            Degree
+            <Container className="edu-content" sx={{ py: 8 }}>
+                <Grid container>
+                    <Grid item xs={2} sm={2} md={2}>
+                        <div className="edu-selector-container">
+                            <div
+                                className={`edu-selector ${selectedEducation === 'SPM' ? 'selected' : ''}`}
+                                onClick={() => handleEducationSelect('SPM')}>
+                                <p>SPM</p>
+                            </div>
+                            <div
+                                className={`edu-selector ${selectedEducation === 'Diploma' ? 'selected shape2' : ''} diploma`}
+                                onClick={() => handleEducationSelect('Diploma')}>
+                                <p>Diploma</p>
+                            </div>
+                            <div
+                                className={`edu-selector ${selectedEducation === 'Degree' ? 'selected' : ''} shape`}
+                                onClick={() => handleEducationSelect('Degree')}>
+                                <p>Degree</p>
+                            </div>
                         </div>
                     </Grid>
-                    <Grid item xs={6} sm={6} md={6}>
-                        <div className="edu-details">
-                            <div className="edu-title">
-                                <h2>Sijil Pelajaran Malaysia</h2>
-                            </div>
-                            <div className="edu-logo">
-                                <img src={smksilogo} alt="SMKSI" className='smksi-logo' />
-                            </div>
-                            <div className="edu-desc">
-                                Here i began my journey as a student learning the inner machinations of software engineering.
-                            </div>
-                            <div className="result-ico">
-
-                            </div>
-                            <div className="edu-result">
-                                CGPA: 3.58
-                            </div>
-                            <div className="edu-date">
-                                2014-2017
-                            </div>
-                        </div>
+                    <Grid item xs={10} sm={10} md={10}>
+                        <EduItem selectedEducation={selectedEducation} isRevealed={isContentRevealed} />
                     </Grid>
                 </Grid>
             </Container>
