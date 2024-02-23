@@ -3,7 +3,7 @@ import Container from '@mui/material/Container';
 
 function About() {
     return (
-        <div className='section about'>
+        <div className='section about' id="AboutSection">
             <div className="section-title about">
                 About Me.
             </div>

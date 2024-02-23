@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import { motion, useAnimationControls } from "framer-motion";
-
+import { useState, useEffect, useRef } from 'react';
+import { motion, useInView, useAnimationControls } from "framer-motion";
 import Grid from '@mui/material/Grid';
 
+import { animlefttoright } from './css/framer-css.js';
 import fusionoffice from '../assets/images/fusionoffice.jpg';
 import reciteoffice from '../assets/images/test.jpg';
 import recitelogo from '../assets/images/reciteclearnoradius.png';
@@ -11,7 +11,9 @@ import fusionlogo from '../assets/images/fusionex.jpg';
 
 
 function Exp() {
-
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+    const mainControls = useAnimationControls();
     const controls = useAnimationControls();
     const imgControls = useAnimationControls();
     const [hiddenFolder, setHiddenFolder] = useState('fusionex');
@@ -53,57 +55,71 @@ function Exp() {
         });
     }, [imgControls, controls, hiddenFolder]);
 
+    useEffect(() => {
+        if (isInView) {
+            mainControls.start("visible");
+        }
+    }, [isInView, mainControls])
+
     return (
-        <div className='section exp'>
+        <div className='section exp' >
             <div className="section-title exp">
                 Experience.
             </div>
-            <Grid className="exp-content" container>
-                <Grid item xs={6} sm={6} md={6}>
-                </Grid>
-                <Grid item xs={6} sm={6} md={6}>
-                    <div className="folder-tab">
-                        <img src={recitelogo} alt="Recite lab Logo"
-                            className={`tab-logo ${hiddenFolder === 'recite' ? 'hidden' : ''}`}
-                            onClick={() => toggleFolderVisibility('recite')} />
-                        <img src={fusionlogoclear} alt="Fusionex Logo"
-                            className={`tab-logo fusion ${hiddenFolder === 'fusionex' ? 'hidden' : ''}`}
-                            onClick={() => toggleFolderVisibility('fusionex')} />
-                    </div>
-                </Grid>
-                <Grid item xs={6} sm={6} md={6}>
-                    <div className="exp-company-area">
-                        <motion.div
-                            animate={controls}>
-                            <div className="exp-company-title"><h1>{name}</h1></div>
-                            <div className="exp-company-desc">{desc}</div>
-                            <img src={logo} alt="Fusionex Logo" className={`folder-logo ${logo === fusionlogo ? 'fusion' : ''}`} />
-                        </motion.div>
-                    </div>
-                </Grid>
-                <Grid item xs={6} sm={6} md={6}>
-                    <div className="folder-area">
-                        <div
-                            className={`folder recite ${hiddenFolder === 'recite' ? 'hidden' : ''}`}>
-                            <motion.div className="folder-img" animate={imgControls}>
-                                <img src={reciteoffice} alt="Recite Lab" className='folder-thumbnail' />
-                                <div className="folder-img-caption-box">
-                                    <p>&quot;Recite Lab&apos;s Office 2023&quot;</p>
-                                </div>
+            <motion.div
+                ref={ref}
+                variants={animlefttoright}
+                initial={"hidden"}
+                animate={mainControls}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                id="ExpSection">
+                <Grid className="exp-content" container>
+                    <Grid item xs={6} sm={6} md={6}>
+                    </Grid>
+                    <Grid item xs={6} sm={6} md={6}>
+                        <div className="folder-tab">
+                            <img src={recitelogo} alt="Recite lab Logo"
+                                className={`tab-logo ${hiddenFolder === 'recite' ? 'hidden' : ''}`}
+                                onClick={() => toggleFolderVisibility('recite')} />
+                            <img src={fusionlogoclear} alt="Fusionex Logo"
+                                className={`tab-logo fusion ${hiddenFolder === 'fusionex' ? 'hidden' : ''}`}
+                                onClick={() => toggleFolderVisibility('fusionex')} />
+                        </div>
+                    </Grid>
+                    <Grid item xs={6} sm={6} md={6}>
+                        <div className="exp-company-area">
+                            <motion.div
+                                animate={controls}>
+                                <div className="exp-company-title"><h1>{name}</h1></div>
+                                <div className="exp-company-desc">{desc}</div>
+                                <img src={logo} alt="Fusionex Logo" className={`folder-logo ${logo === fusionlogo ? 'fusion' : ''}`} />
                             </motion.div>
                         </div>
-                        <div
-                            className={`folder fusionex ${hiddenFolder === 'fusionex' ? 'hidden' : ''}`}>
-                            <motion.div className="folder-img" animate={imgControls}>
-                                <img src={fusionoffice} alt="Fusionex" className='folder-thumbnail' />
-                                <div className="folder-img-caption-box">
-                                    <p>&quot;Fusionex Office 2023&quot;</p>
-                                </div>
-                            </motion.div>
+                    </Grid>
+                    <Grid item xs={6} sm={6} md={6}>
+                        <div className="folder-area">
+                            <div
+                                className={`folder recite ${hiddenFolder === 'recite' ? 'hidden' : ''}`}>
+                                <motion.div className="folder-img" animate={imgControls}>
+                                    <img src={reciteoffice} alt="Recite Lab" className='folder-thumbnail' />
+                                    <div className="folder-img-caption-box">
+                                        <p>&quot;Recite Lab&apos;s Office 2023&quot;</p>
+                                    </div>
+                                </motion.div>
+                            </div>
+                            <div
+                                className={`folder fusionex ${hiddenFolder === 'fusionex' ? 'hidden' : ''}`}>
+                                <motion.div className="folder-img" animate={imgControls}>
+                                    <img src={fusionoffice} alt="Fusionex" className='folder-thumbnail' />
+                                    <div className="folder-img-caption-box">
+                                        <p>&quot;Fusionex Office 2023&quot;</p>
+                                    </div>
+                                </motion.div>
+                            </div>
                         </div>
-                    </div>
+                    </Grid>
                 </Grid>
-            </Grid>
+            </motion.div>
         </div>
     )
 }

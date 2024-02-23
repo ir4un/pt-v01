@@ -2,6 +2,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { motion } from "framer-motion";
+import { Link } from 'react-scroll';
 
 import videoFile from '../assets/videos/animated-bliss.mp4';
 import pfpImg from '../assets/images/irfan-selfcleararm.png';
@@ -59,101 +60,133 @@ function Intro() {
                         justifyContent="center">
                         <Grid item xs={12} sm={6}>
                         </Grid>
-
                         <Grid item xs={12} sm={6}>
                             <Grid container
                                 columnSpacing={{ xs: 2 }}
                                 rowSpacing={2}
                                 alignItems="center"
-                                justifyContent="center"
-                            >
+                                justifyContent="center">
                                 <Grid item xs={12} sm={12}>
-                                    <motion.div
-                                        className='intro-btn-big'
-                                        variants={introButtonMotion}
-                                        initial={"initial"}
-                                        animate={"animate"}
-                                        whileHover={"hoverEffect"}
-                                        whileTap={"tapEffect"}
-                                    >
-                                        <div className='welcome-btn'>
-                                            <img src={sanity} alt="Sanity" />
-                                        </div>
-                                        Welcome!
-                                    </motion.div>
+                                    <Link
+                                        to={'AboutSection'}
+                                        smooth={true}
+                                        spy={true}
+                                        offset={-300}
+                                        duration={500} >
+                                        <motion.div
+                                            className='intro-btn-big'
+                                            variants={introButtonMotion}
+                                            initial={"initial"}
+                                            animate={"animate"}
+                                            whileHover={"hoverEffect"}
+                                            whileTap={"tapEffect"}>
+                                            <div className='welcome-btn'>
+                                                <img src={sanity} alt="Sanity" />
+                                            </div>
+                                            Welcome!
+                                        </motion.div>
+                                    </Link>
                                 </Grid>
-
                                 <Grid item xs={6} sm={6}>
-                                    <motion.div
-                                        className='intro-btn-small'
-                                        variants={introButtonMotion}
-                                        initial={"initial"}
-                                        animate={"animate"}
-                                        whileHover={"hoverEffect"}
-                                        whileTap={"tapEffect"}>
-                                        Education
-                                    </motion.div>
+                                    <Link
+                                        to={'EduSection'}
+                                        smooth={true}
+                                        spy={true}
+                                        duration={500} >
+                                        <motion.div
+                                            className='intro-btn-small'
+                                            variants={introButtonMotion}
+                                            initial={"initial"}
+                                            animate={"animate"}
+                                            whileHover={"hoverEffect"}
+                                            whileTap={"tapEffect"}>
+                                            Education
+                                        </motion.div>
+                                    </Link>
                                 </Grid>
-
                                 <Grid item xs={6} sm={6}>
-                                    <motion.div
-                                        className='intro-btn-small'
-                                        variants={introButtonMotion}
-                                        initial={"initial"}
-                                        animate={"animate"}
-                                        whileHover={"hoverEffect"}
-                                        whileTap={"tapEffect"}>
-                                        Experience
-                                    </motion.div>
+                                    <Link
+                                        to={'ExpSection'}
+                                        smooth={true}
+                                        spy={true}
+                                        duration={500} ><motion.div
+                                            className='intro-btn-small'
+                                            variants={introButtonMotion}
+                                            initial={"initial"}
+                                            animate={"animate"}
+                                            whileHover={"hoverEffect"}
+                                            whileTap={"tapEffect"}>
+                                            Experience
+                                        </motion.div>
+                                    </Link>
                                 </Grid>
-
                                 <Grid item xs={6} sm={6}>
-                                    <motion.div
-                                        className='intro-btn-blue'
-                                        variants={introBlueButtonMotion}
-                                        initial={"initial"}
-                                        animate={"animate"}
-                                        whileHover={"hoverEffect"}
-                                        whileTap={"tapEffect"}
-                                    >
-                                        Projects
-                                    </motion.div>
+                                    <Link
+                                        to={'StackSection'}
+                                        smooth={true}
+                                        spy={true}
+                                        duration={500} ><motion.div
+                                            className='intro-btn-blue'
+                                            variants={introBlueButtonMotion}
+                                            initial={"initial"}
+                                            animate={"animate"}
+                                            whileHover={"hoverEffect"}
+                                            whileTap={"tapEffect"}>
+                                            Stacks
+                                        </motion.div>
+                                    </Link>
                                 </Grid>
-
                                 <Grid item xs={6} sm={6}>
-                                    <motion.div
-                                        className='intro-btn-blue'
-                                        variants={introBlueButtonMotion}
-                                        initial={"initial"}
-                                        animate={"animate"}
-                                        whileHover={"hoverEffect"}
-                                        whileTap={"tapEffect"}>
-                                        Stacks
-                                    </motion.div>
+                                    <Link
+                                        to={'ProjectSection'}
+                                        smooth={true}
+                                        spy={true}
+                                        duration={500} >
+                                        <motion.div
+                                            className='intro-btn-blue'
+                                            variants={introBlueButtonMotion}
+                                            initial={"initial"}
+                                            animate={"animate"}
+                                            whileHover={"hoverEffect"}
+                                            whileTap={"tapEffect"}>
+                                            Projects
+                                        </motion.div>
+                                    </Link>
                                 </Grid>
-
                                 <Grid item xs={5} sm={5}>
-                                    <motion.div
-                                        className='intro-btn-small'
-                                        variants={introButtonMotion}
-                                        initial={"initial"}
-                                        animate={"animate"}
-                                        whileHover={"hoverEffect"}
-                                        whileTap={"tapEffect"}>
-                                        Hobbies
-                                    </motion.div>
+                                    <Link
+                                        to={'HobbiesSection'}
+                                        smooth={true}
+                                        spy={true}
+                                        duration={500} >
+                                        <motion.div
+                                            className='intro-btn-small'
+                                            variants={introButtonMotion}
+                                            initial={"initial"}
+                                            animate={"animate"}
+                                            whileHover={"hoverEffect"}
+                                            whileTap={"tapEffect"}>
+                                            Hobbies
+                                        </motion.div>
+                                    </Link>
                                 </Grid>
 
                                 <Grid item xs={7} sm={7}>
-                                    <motion.div
-                                        className='intro-btn-small'
-                                        variants={introButtonMotion}
-                                        initial={"initial"}
-                                        animate={"animate"}
-                                        whileHover={"hoverEffect"}
-                                        whileTap={"tapEffect"}>
-                                        Contact
-                                    </motion.div>
+                                    <Link
+                                        to={'ContactSection'}
+                                        smooth={true}
+                                        spy={true}
+                                        duration={500} >
+                                        <motion.div
+                                            className='intro-btn-small'
+                                            variants={introButtonMotion}
+                                            initial={"initial"}
+                                            animate={"animate"}
+                                            whileHover={"hoverEffect"}
+                                            whileTap={"tapEffect"}>
+                                            Contact
+                                        </motion.div>
+                                    </Link>
                                 </Grid>
                             </Grid>
                         </Grid>

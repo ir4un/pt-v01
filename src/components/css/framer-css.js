@@ -77,3 +77,42 @@ export const projectButton = {
     },
 
 };
+
+export const contactSend = {
+    tapEffect: {
+        backgroundImage: 'linear-gradient(to bottom, rgba(0, 76, 109, 1) 0%, rgba(0, 76, 109, 1) 100%)',
+        transition: { duration: 0 },
+        cursor: 'pointer'
+    },
+    hoverEffect: {
+        backgroundImage: 'linear-gradient(to bottom, rgba(0, 112, 161, 1) 0%, rgba(0, 112, 161, 1) 100%)',
+        transition: { duration: 0 },
+        cursor: 'pointer'
+    }
+};
+
+export const animrighttoleft = {
+    hidden: {
+        opacity: 0, x: 75
+    },
+    visible: {
+        opacity: 1, x: 0
+    }
+};
+
+export const animlefttoright = {
+    hidden: {
+        opacity: 0, x: -75
+    },
+    visible: {
+        opacity: 1, x: 0
+    }
+};
+export const animbottomtotop = {
+    hidden: {
+        opacity: 0, y: 75
+    },
+    visible: {
+        opacity: 1, y: 0
+    }
+};
