@@ -460,10 +460,8 @@
 .exp-company-area {
     color: #fff;
     min-height: 500px;
-    clip-path: polygon(0 0, 100% 0%, 92% 100%, 0% 100%);
-    background-color: #838383;
+    background-color: #4f4f4f;
     padding: 30px;
-    margin-right: 15%;
 }
 
 .exp-company-title {
@@ -476,17 +474,44 @@
 
 .folder-area {
     position: relative;
-    min-height: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: #4f4f4f;
 }
 
 .folder {
     background-color: #f4f4ec;
-    padding: 20px 20px 10px 0px;
-    position: absolute;
+    padding: 20px 20px 10px 20px;
+    position: relative;
     display: flex;
-    right: 0px;
-    border-radius: 25px 0px 0px 0px;
+    justify-content: flex-end;
+    flex-direction: row;
+    border-radius: 0px 0px 0px 15px;
     height: 100%;
+    z-index: 1;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+}
+
+.folder.fusionex.hidden {
+    position: absolute;
+    display: none;
+    top: 0;
+    padding-right: 0px;
+    z-index: 0;
+    cursor: pointer;
+}
+
+.folder.recite.hidden {
+    position: absolute;
+    top: 0;
+    margin-left: 0px;
+    z-index: 0;
+    cursor: pointer;
+}
+
+.folder.fusionex.hidden .folder-img {
+    display: none;
 }
 
 .folder p {
@@ -501,31 +526,139 @@
 }
 
 .folder-img {
+    flex: 1;
     display: flex;
-    width: auto;
-    height: 448px;
+    align-items: flex-end;
     border-radius: 6px;
+    cursor: auto;
+
 }
 
 .folder-img-caption-box {
-    width: 90%;
+    width: calc(100% - 40px);
+    max-width: 100%;
     height: 55px;
     background-color: #d58624;
     position: absolute;
-    bottom: 10px;
-    border-radius: 0px 0px 6px 0px;
+    border-radius: 0px 0px 6px 6px;
+    overflow: hidden;
 }
 
 .folder-img-caption-box p {
-    margin-left: 100px;
+    margin-left: 15px;
     text-align: left;
     writing-mode: horizontal-tb;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
 }
 
-.folder-img img {
+.folder-thumbnail {
     border-radius: 6px;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.folder-logo {
+    position: absolute;
+    bottom: 20px;
+    left: 85px;
+    height: 72px;
+    width: 70px;
+    margin-top: 6px;
+    margin-right: -10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 6px;
+    background-color: #f4f4ec;
+}
+
+.folder-logo.fusion {
+    position: absolute;
+    bottom: 20px;
+    left: 85px;
+    height: 72px;
+    width: 70px;
+    margin-top: 6px;
+    margin-right: -10px;
+    border: solid #fff 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 6px;
+}
+
+.folder-logo {
+    position: absolute;
+    top: -56px;
+    left: 130px;
+    height: 470px;
+    width: 500px;
+    margin-top: 6px;
+    margin-right: -10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 6px;
+    z-index: -99;
+    opacity: 0.5;
+    filter: blur(1px);
+}
+
+.folder-logo.fusion {
+    position: absolute;
+    top: -56px;
+    left: 130px;
+    height: 470px;
+    width: 500px;
+    margin-top: 6px;
+    margin-right: -10px;
+    border: solid #fff 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 6px;
+    z-index: -99;
+    opacity: 0.5;
+    filter: blur(1px);
+}
+
+.folder-tab {
+    margin-bottom: -7px;
+}
+
+.tab-logo {
+    position: relative;
+    height: 72px;
+    width: 70px;
+    margin-top: 6px;
+    margin-right: -10px;
+    background-color: #f4f4ec;
+    border: solid #f4f4ec 8px;
+    border-radius: 6px 6px 0 0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    z-index: 1;
+}
+
+.tab-logo:hover {
+    cursor: pointer;
+}
+
+.tab-logo.fusion {
+    clip-path: inset(0 10% 0 10%) polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    position: relative;
+    height: 72px;
+    width: 70px;
+    margin-top: 6px;
+    margin-left: 10px;
+    border: solid #f4f4ec 8px;
+    border-radius: 6px 6px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 1;
+}
+
+.tab-logo.hidden {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 0px;
+    z-index: 0;
+    bottom: -5px !important
+}
+
+.tab-logo.fusion.hidden {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 0px;
+    z-index: 0;
+    bottom: -5px !important
 }
 
 /* Stack Section */
@@ -539,13 +672,13 @@
 }
 
 .stack-content {
-    margin-top: 115px;
+    margin-top: 200px;
 }
 
 .stack-item {
     display: flex;
     justify-content: center;
-    height: 400px;
+    height: 450px;
 }
 
 .stack-item.details {
@@ -558,6 +691,7 @@
     z-index: -1;
     color: #fff;
     padding: 25px;
+    background: linear-gradient(to right, #4f4f4f, transparent);
 }
 
 .stack-item.logo {
@@ -571,7 +705,7 @@
     display: flex;
     justify-content: end;
     align-items: center;
-    z-index: -1;
+    z-index: 999;
 }
 
 .stack-list-background {
@@ -597,12 +731,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(90deg, rgba(78, 78, 78, 1) 0%, rgba(49, 49, 49, 1) 100%);
+    background-image: linear-gradient(to right, rgba(78, 78, 78, 1) 0%, rgba(49, 49, 49, 1) 100%);
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-size: 30px;
     text-align: center;
-    height: 100px;
-    width: 100px;
+    height: 125px;
+    width: 125px;
     overflow: hidden;
 }
 
@@ -615,13 +749,14 @@
 }
 
 .stack-small-logo {
-    width: 90px;
+    width: 77px;
     height: auto;
 }
 
 .selected-logo {
     width: 500px;
-    height: 500px;
+    height: 100%;
+    opacity: 0.5;
 }
 
 /* Projects Section */
@@ -660,36 +795,58 @@
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-size: 30px;
     text-align: center;
-    height: 450px;
-    width: 300px;
+    height: 300px;
+    width: 450px;
     border-radius: 5px;
     overflow: hidden;
 }
 
-.project-grid-item::before {
-    content: '';
+.project-grid-item-effect {
+    display: flex;
+    flex-direction: column;
     position: absolute;
-    top: 0;
-    left: 0;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 30px;
+    text-align: center;
+    height: 615px;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(128, 128, 128, 0) 0%, rgba(128, 128, 128, 1) 100%);
-    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 25px;
 }
 
+.project-grid-content {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 65%, rgba(0, 0, 0, 0));
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 30px;
+    text-align: center;
+    padding: 25px;
+}
 
+.project-grid-content>div {
+    margin-top: 10px;
+}
 
 .project-thumbnail {
     width: 100%;
     height: 100%;
     object-fit: cover;
     filter: blur(1px);
-    /* Adjust the blur amount */
+    filter: brightness(100%);
+}
+
+.project-thumbnail:hover {
+    filter: blur(2px);
+    filter: brightness(85%);
 }
 
 .project-name {
-    position: absolute;
-    bottom: 160px;
+    position: relative;
     font-size: 25px;
     z-index: 999;
 }
@@ -706,15 +863,13 @@
 }
 
 .project-desc {
-    position: absolute;
-    bottom: 30px;
+    position: relative;
     font-size: 16px;
     z-index: 999;
 }
 
 .project-stack-icon-grid {
-    position: absolute;
-    bottom: 92px;
+    position: relative;
     justify-content: center;
     align-items: center;
     display: grid;
@@ -731,4 +886,143 @@
     height: 50px;
     width: 50px;
     z-index: 999;
+}
+
+/* Contact Section*/
+.section.contact {
+    margin-top: 10px;
+}
+
+.section-title.contact {
+    top: -50px;
+}
+
+.contact-content {
+    margin-top: 200px;
+    margin-bottom: 100px;
+}
+
+.contact-grid {
+    margin: 0 300px 0 300px;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    padding: 10px;
+    width: auto;
+    height: auto;
+    gap: 10px 10px;
+    background-color: #4f4f4f;
+    border: solid 1px #fff;
+}
+
+.contact-grid-item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    font-size: 30px;
+    text-align: center;
+    height: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #353535;
+    z-index: 0;
+}
+
+.contact-grid-item.big-column {
+    height: 100%;
+    grid-row: span 2;
+    grid-column: span 2;
+    background-color: #4f4f4f;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contact-form label {
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.contact-form label:nth-of-type(2) {
+    padding-top: 10px;
+}
+
+.contact-form>input {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.contact-form>textarea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    font-size: 20px;
+    resize: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.contact-form button {
+    position: relative;
+    align-self: flex-end;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    margin-top: 10px;
+    background: linear-gradient(180deg, rgba(0, 147, 212, 1) 0%, rgba(0, 112, 161, 1) 100%);
+    font-weight: bold;
+    font-size: 15px;
+    padding-left: 30px;
+    color: #fff;
+    overflow: hidden;
+    z-index: 5;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.contact-send-ico {
+    position: absolute;
+    color: #000000;
+    left: 0;
+    top: 0;
+    font-size: 50px;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.contact-email-ico {
+    position: absolute;
+    color: #000000;
+    left: -24px;
+    top: -79px;
+    font-size: 300px;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.contact-phone-ico {
+    position: absolute;
+    color: #000000;
+    left: -34px;
+    top: -58px;
+    font-size: 270px;
+    opacity: 0.3;
+    z-index: -1;
 }

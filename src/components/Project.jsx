@@ -1,12 +1,14 @@
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
+import { motion } from "framer-motion";
 
+import { projectButton } from './css/framer-css.js';
+import { projectContent } from './content/project-content';
 // import example from '../assets/images/example.jpg';
 // import recitelogo from '../assets/images/reciteclearnoradius.png';
-import example from '../assets/images/test.jpg';
-import nodejs from '../assets/images/nodejsv2.png';
 
 function Project() {
+
     return (
         <div className='section project'>
             <div className="section-title project">
@@ -16,46 +18,29 @@ function Project() {
                 <Grid container spacing={4}>
                     <Grid item xs={12} sm={12} md={12}>
                         <div className="project-grid">
-                            <div className="project-grid-item">
-                                <img src={example} alt="Example" className='project-thumbnail' />
-                                <div className="project-name">Checkcar</div>
-                                <div className="project-stack-icon-grid">
-                                    <img src={nodejs} alt="NodeJS" className='project-stack-icon-item' />
-                                    <img src={nodejs} alt="NodeJS" className='project-stack-icon-item' />
-                                    <img src={nodejs} alt="NodeJS" className='project-stack-icon-item' />
-                                </div>
-                                <div className="project-desc">AI Powered Website to Identify and Retrieve Car Model Prices</div>
-                            </div>
-                            <div className="project-grid-item">
-                                <img src={example} alt="Example" className='project-thumbnail' />
-                                <div className="project-name">Checkcar</div>
-
-                                <div className="project-desc">AI Powered Website to Identify and Retrieve Car Model Prices</div>
-
-                            </div>
-                            <div className="project-grid-item">
-                                <img src={example} alt="Example" className='project-thumbnail' />
-                                <div className="project-name">Checkcar</div>
-                                <div className="project-desc">AI Powered Website to Identify and Retrieve Car Model Prices</div>
-
-                            </div>
-                            <div className="project-grid-item">
-                                <img src={example} alt="Example" className='project-thumbnail' />
-                                <div className="project-name">Checkcar</div>
-                                <div className="project-desc">AI Powered Website to Identify and Retrieve Car Model Prices</div>
-
-                            </div>
-                            <div className="project-grid-item">
-                                <img src={example} alt="Example" className='project-thumbnail' />
-                                <div className="project-name">Checkcar</div>
-                                <div className="project-desc">AI Powered Website to Identify and Retrieve Car Model Prices</div>
-
-                            </div>
-                            <div className="project-grid-item">
-                                <img src={example} alt="Example" className='project-thumbnail' />
-                                <div className="project-name">Checkcar</div>
-                                <div className="project-desc">AI Powered Website to Identify and Retrieve Car Model Prices</div>
-                            </div>
+                            {Object.values(projectContent).map(stackItems => (
+                                stackItems.map((item, idx) => (
+                                    <div className="project-grid-item" key={idx}>
+                                        <img src={item.thumbnail} alt="Example" className='project-thumbnail' />
+                                        <motion.div
+                                            className="project-grid-item-effect"
+                                            variants={projectButton}
+                                            transition={"initial"}
+                                            whileHover={"hoverEffect"}
+                                        // onClick={() => handleStackClick(item)}
+                                        >
+                                            <div className="project-grid-content">
+                                                <div className="project-name">{item.name}</div>
+                                                <div className="project-stack-icon-grid">
+                                                    {item.logo.map((logo, index) => (
+                                                        <img key={index} src={logo} alt={item.name} className='project-stack-icon-item' />
+                                                    ))}</div>
+                                                <div className="project-desc">{item.desc}</div>
+                                            </div>
+                                        </motion.div>
+                                    </div>
+                                ))
+                            ))}
                         </div>
                     </Grid>
                 </Grid>

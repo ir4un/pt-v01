@@ -2,7 +2,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './App.css'
 import { useEffect, useState } from 'react';
-import Footer from './components/Footer';
 import Intro from './components/Intro';
 import Edu from './components/Edu';
 import Divider from './components/Divider';
@@ -10,6 +9,7 @@ import About from './components/About';
 import Exp from './components/Exp';
 import Stack from './components/Stack';
 import Project from './components/Project';
+import Contact from './components/Contact';
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme({
@@ -40,22 +40,22 @@ function App() {
             <div className="line-right"></div>
           </div>
         ) : (
-          // Show the main content when loading is false
-          <ThemeProvider theme={defaultTheme}>
-            <CssBaseline />
-            <main>
-              {/* Hero unit */}
-              <Intro />
-              <Divider />
-              <About />
-              <Edu />
-              <Exp />
-              <Stack />
-              <Project />
-            </main>
-            <Footer />
-          </ThemeProvider>
+          <div></div>
         )}
+        <ThemeProvider theme={defaultTheme}>
+          <CssBaseline />
+          <main>
+            {/* Hero unit */}
+            <Intro />
+            <Divider />
+            <About />
+            <Edu />
+            <Exp />
+            <Stack />
+            <Project />
+            <Contact />
+          </main>
+        </ThemeProvider>
       </div>
     </>
   )
