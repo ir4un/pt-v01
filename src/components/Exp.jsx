@@ -80,9 +80,9 @@ function Exp() {
                 transition={{ duration: 0.5, delay: 0.5 }}
                 id="ExpSection">
                 <Grid className="exp-content" container>
-                    <Grid item xs={6} sm={6} md={6}>
+                    <Grid item xs={0} sm={6} md={6}>
                     </Grid>
-                    <Grid item xs={6} sm={6} md={6}>
+                    <Grid item xs={12} sm={6} md={6}>
                         <div className="folder-tab">
                             <img src={recitelogo} alt="Recite lab Logo"
                                 className={`tab-logo ${hiddenFolder === 'recite' ? 'hidden' : ''}`}
@@ -92,7 +92,7 @@ function Exp() {
                                 onClick={() => toggleFolderVisibility('fusionex')} />
                         </div>
                     </Grid>
-                    <Grid item xs={6} sm={6} md={6}>
+                    <Grid item xs={12} sm={6} md={6}>
                         <div className="exp-company-area">
                             <motion.div
                                 animate={controls}>
@@ -104,7 +104,7 @@ function Exp() {
                             </motion.div>
                         </div>
                     </Grid>
-                    <Grid item xs={6} sm={6} md={6}>
+                    <Grid item xs={12} sm={6} md={6}>
                         <div className="folder-area">
                             <div
                                 className={`folder recite ${hiddenFolder === 'recite' ? 'hidden' : ''}`}>

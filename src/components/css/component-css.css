@@ -27,10 +27,9 @@
     font-size: 150px;
     font-weight: bold;
     position: absolute;
-    left: -26px;
+    left: 0;
     display: flex;
     justify-content: flex-start;
-    padding-left: 15px;
     padding-right: 15px;
     width: 100%;
     opacity: 0.5;
@@ -245,6 +244,7 @@
     z-index: -1;
     opacity: 0.85;
     transform: rotate(-3deg) skewX(-6deg);
+    text-align: left;
 }
 
 .intro-desc p {
@@ -824,6 +824,9 @@
 
 .folder-img-caption-box {
     width: calc(100% - 40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 100%;
     height: 55px;
     background-color: #d58624;
@@ -833,7 +836,6 @@
 }
 
 .folder-img-caption-box p {
-    margin-left: 15px;
     text-align: center;
     writing-mode: horizontal-tb;
     transform: rotate(0deg);
@@ -957,6 +959,7 @@
     position: relative;
     z-index: -1;
     color: #fff;
+    width: 100%;
     padding: 25px;
     background: linear-gradient(to right, #4f4f4f, transparent);
 }
@@ -1649,6 +1652,7 @@
 
 @media screen and (max-width: 400px) {
 
+    /* Intro Section*/
     .IntroMain {
         position: relative;
         overflow: hidden;
@@ -1724,7 +1728,183 @@
         transform: rotate(0deg) skewX(0deg) translateX(-50%);
     }
 
+    .title-ico.smile {
+        top: 24px;
+        font-size: 50px;
+
+    }
+
+    /* About Section*/
+
+    .about-content {
+        margin-top: 0;
+    }
 
 
+    /* Edu Section*/
 
+    .section-title.edu {
+        top: 0;
+    }
+
+    .edu-content {
+        margin-top: 60px;
+    }
+
+    .title-ico.edu {
+        top: 75px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .edu-selector-container {
+        margin-top: 0;
+    }
+
+    .edu-title {
+        height: 140px;
+    }
+
+    .edu-date {
+        font-size: 50px;
+    }
+
+    /* Exp Section*/
+
+    .section-title.exp {
+        top: 0;
+    }
+
+    .exp-content {
+        margin-top: 88px;
+    }
+
+    .title-ico.exp {
+        top: 75px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .exp-company-title h1 {
+        margin-bottom: 0px;
+        margin-top: 0;
+        font-size: 40px;
+    }
+
+    .exp-company-date {
+        font-size: 10px;
+    }
+
+    .exp-company-desc {
+        font-size: 18px;
+    }
+
+    .folder-area {
+        height: 300px;
+    }
+
+    .folder-img-caption-box {
+        height: 40px;
+    }
+
+    .folder-img-caption-box p {
+        font-size: 15px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    /* Stack Section*/
+
+    .section-title.stack {
+        top: 0;
+    }
+
+    .stack-content {
+        margin-top: 60px;
+    }
+
+    .title-ico.stack {
+        top: 75px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .section.stack {
+        margin-top: 25px;
+    }
+
+    .stack-item {
+        height: 245px;
+    }
+
+    .stack-item.logo {
+        display: none;
+    }
+
+    .stack-item.list {
+        overflow-x: auto;
+        align-items: end;
+    }
+
+    .stack-grid {
+        display: flex;
+        /* Use flexbox for the grid container */
+        padding: 10px;
+        gap: 10px;
+        /* Adjust the gap between grid items */
+        width: 100%;
+        height: auto;
+        overflow-x: scroll;
+        /* Allow horizontal scrolling */
+        scroll-snap-type: x mandatory;
+    }
+
+    .stack-grid-item {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        /* Snap each grid item to the start of the scroll container */
+    }
+
+    .stack-grid-item:nth-child(n + 5) {
+        margin-left: 0;
+    }
+
+    .stack-grid-item:nth-child(n + 9) {
+        margin-left: 0;
+    }
+
+    .stack-list-background {
+        display: none;
+    }
+
+    .stack-item.details {
+        height: auto;
+    }
+
+    .stack-title h1 {
+        font-size: 45px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+
+    /* Project Section*/
+
+    .section-title.project {
+        top: 0;
+    }
+
+    .project-content {
+        margin-top: 60px;
+    }
+
+    .title-ico.project {
+        top: 75px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .section.project {
+        margin-top: 25px;
+    }
 }

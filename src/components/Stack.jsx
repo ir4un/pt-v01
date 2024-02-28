@@ -2,11 +2,13 @@ import { useState, useEffect, useRef } from 'react';
 import Grid from '@mui/material/Grid';
 import { motion, useInView, useAnimationControls } from "framer-motion";
 import { HiMiniSquare3Stack3D } from "react-icons/hi2";
+import { useMediaQuery } from '@mui/material';
 
 import { stackButton, animrighttoleft } from './css/framer-css.js';
 import { stackContent } from './content/stack-content';
 
 function Stack() {
+    const isMobile = useMediaQuery(theme => theme.breakpoints.down('sm'));
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
     const mainControls = useAnimationControls();
@@ -55,8 +57,9 @@ function Stack() {
                 animate={mainControls}
                 transition={{ duration: 0.5, delay: 0.5 }}
                 id="StackSection">
-                <Grid className="stack-content" container>
-                    <Grid item xs={5} sm={5} md={5}>
+                <Grid className="stack-content" container
+                    direction={isMobile ? "column-reverse" : "none"}>
+                    <Grid item xs={12} sm={5} md={5} style={{ maxWidth: "none" }}>
                         <div className="stack-item details">
                             <motion.div animate={controls} transition={{
                                 ease: "linear",
@@ -72,7 +75,7 @@ function Stack() {
                             </motion.div>
                         </div>
                     </Grid>
-                    <Grid item xs={3} sm={3} md={3}>
+                    <Grid item xs={0} sm={4} md={3}>
                         <motion.div className="stack-item logo" animate={imgControls} transition={{
                             ease: "linear",
                             duration: 0.8,
@@ -81,7 +84,7 @@ function Stack() {
                             <img src={selectedLogo} alt={selectedStack} className='selected-logo' />
                         </motion.div>
                     </Grid>
-                    <Grid item xs={4} sm={4} md={4}>
+                    <Grid item xs={12} sm={4} md={4} style={{ maxWidth: "100%" }}>
                         <div className="stack-item list">
                             <div className="stack-list-background">
                                 <br></br>

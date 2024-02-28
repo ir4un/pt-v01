@@ -47,7 +47,7 @@ function Edu() {
                     transition={{ duration: 0.5, delay: 0.5 }}
                     id="EduSection">
                     <Grid container>
-                        <Grid item xs={2} sm={2} md={2}>
+                        <Grid item xs={12} sm={2} md={2}>
                             <div className="edu-selector-container">
                                 <div
                                     className={`edu-selector ${selectedEducation === 'SPM' ? 'selected' : ''}`}
@@ -66,7 +66,7 @@ function Edu() {
                                 </div>
                             </div>
                         </Grid>
-                        <Grid item xs={10} sm={10} md={10}>
+                        <Grid item xs={12} sm={10} md={10}>
                             <EduItem selectedEducation={selectedEducation} isRevealed={isContentRevealed} />
                         </Grid>
                     </Grid>
