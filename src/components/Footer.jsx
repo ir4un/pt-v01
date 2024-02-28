@@ -1,37 +1,24 @@
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
+import blissv2 from '../assets/images/blissless.png';
+import amiya from '../assets/images/amiyahold.png';
+import lolidance from '../assets/images/lolidance.gif';
+import gupgif from '../assets/images/gupgif.gif';
+import catto1 from '../assets/images/catto1.gif';
 
-function Copyright() {
-    return (
-        <Typography variant="body2" color="text.secondary" align="center">
-            {'Copyright © '}
-            <Link color="inherit" href="https://mui.com/">
-                Your Website
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
+
+import './css/component-css.css';
 
 function Footer() {
     return (
-        <div>
-            <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
-                <Typography variant="h6" align="center" gutterBottom>
-                    Footer
-                </Typography>
-                <Typography
-                    variant="subtitle1"
-                    align="center"
-                    color="text.secondary"
-                    component="p"
-                >
-                    Something here to give the footer a purpose!
-                </Typography>
-                <Copyright />
-            </Box>
+        <div className='section footer'>
+            <div className='footerimg'>
+                <img src={blissv2} alt="Your Image" className='footer-bg' />
+            </div>
+            <div className="footergifs">
+                <img src={amiya} alt="Your Image" className='amiya-img' />
+                <img src={lolidance} alt="Your Image" className='loli-gif' />
+                <img src={gupgif} alt="Your Image" className='gup-gif' />
+                <img src={catto1} alt="Your Image" className='cat-gif' />
+            </div>
         </div>
     )
 }

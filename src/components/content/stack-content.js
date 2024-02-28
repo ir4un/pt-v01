@@ -15,35 +15,35 @@ export const stackContent = {
     java: [
         {
             name: 'Java',
-            desc: 'A high-level programming language known for its platform independence and wide usage in building enterprise-level applications.',
+            desc: 'The first programming language I have ever touched, back in Form 4 in SMKSI. One of the Object Oriented Programming language I was introduced to. I continued learning it and improve in my Diploma and Degree studies',
             logo: javaLogo
         },
     ],
     nodejs: [
         {
             name: 'Node.js',
-            desc: 'A popular and versatile language that is considered to be the forefront of modern web frameworks.',
+            desc: 'One of the most versatile programming languages and for some reason, not related with Java at all. I had to self-learn Node.js for my internship at Recite Labs to work with backend systems and work on React for clients.',
             logo: nodejsLogo
         },
     ],
     html: [
         {
             name: 'HTML',
-            desc: 'A markup language used for creating web pages and web applications.',
+            desc: 'The bread of all programming languages and where most programmers start their journey, my first experience was back in Form 5 in SMKSI where I had to develop a student management system, then had multiple assignments throughout my studies to develop various websites which includes a consultation website and then an E-Commerce website and many more.',
             logo: htmlLogo
         },
     ],
     css: [
         {
             name: 'CSS',
-            desc: 'A style sheet language used for describing the presentation of a document written in HTML.',
+            desc: 'I guess you can say this is the butter for HTML, to make it look good and nice mmmm. Pretty nice stylesheet feature to make your website looks and has improved as SASS and SCSS',
             logo: cssLogo
         },
     ],
     javascript: [
         {
             name: 'JavaScript',
-            desc: 'A programming language that enables interactive web pages and is an essential part of web development.',
+            desc: 'This is what gave birth to Node.JS which provides far more advanced features to be used alongside HTML and CSS. I would give this programming language a 10/10.',
             logo: javascriptLogo
         },
     ],
@@ -51,49 +51,49 @@ export const stackContent = {
     python: [
         {
             name: 'Python',
-            desc: 'An easy-to-learn programming language with a simple syntax, widely used for web development, data analysis, artificial intelligence, and more.',
+            desc: 'Surprisingly this one I had to self-learn as well for my Degree which involves a lot of machine learning related development and Python is most well-known for that. You can do it with other programming languages but I prefer with Python.',
             logo: pythonLogo
         },
     ],
     cplusplus: [
         {
             name: 'C++',
-            desc: 'A powerful and efficient programming language used in developing system software, game engines, operating systems, and more.',
+            desc: 'I learnt during my Degree and had to develop a pretty funky CLI application. It can display a donut in string form.',
             logo: cppLogo
         },
     ],
     git: [
         {
             name: 'Git',
-            desc: 'A distributed version control system used for tracking changes in source code during software development, enabling collaboration and code management.',
+            desc: 'This is another thing that I had to self-learn which has helped a lot in my current coding career. It was a bit rough to get to used with the various commands at first, but after consistent use in internships at Recite Labs and Fusionex and assigments, I would say I have gotten good at it.',
             logo: gitLogo
         },
     ],
     tensorflow: [
         {
             name: 'TensorFlow',
-            desc: 'An open-source machine learning framework developed by Google, widely used for building and training deep learning models.',
+            desc: 'An open-source machine learning framework I mostly used to train AI models especially for my final year project, Checkcar. The trained model was able to accept an input image of a car and accurately provide the model and the current price of the car.',
             logo: tensorflowLogo
         },
     ],
     react: [
         {
             name: 'React',
-            desc: 'A JavaScript library for building user interfaces, commonly used for developing single-page applications and interactive UI components.',
+            desc: 'A framework I started using after self-learning Node.JS during my Recite Lab internship. I had to develop a dashboard for Recite Lab and but my internship ended before I could finish it. I had also used React to develop a website to present the FlashGuard chrome extension which was developed for the MelHack 2021 hackathon.',
             logo: reactLogo
         },
     ],
     r: [
         {
             name: 'R',
-            desc: 'A programming language and environment used for statistical computing and graphics, widely used in data analysis and research.',
+            desc: 'Holy sh*t!',
             logo: rLogo
         },
     ],
     matlab: [
         {
             name: 'MATLAB',
-            desc: 'A high-level programming language and interactive environment used for numerical computation, data analysis, and visualization.',
+            desc: 'A software I used for a short amount of time for learning about computer vision and how it can be used to enhance and apply filters to images to potentially reveal interesting thins. I had developed a simple app using MatLab that can identify defects within different types of gloves.',
             logo: matlabLogo
         },
     ],

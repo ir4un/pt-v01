@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid';
 import { motion, useInView, useAnimationControls } from "framer-motion";
 
 import { FaRegPaperPlane } from "react-icons/fa6";
-import { MdOutlineEmail, MdOutlinePhoneInTalk } from "react-icons/md";
+import { MdOutlineEmail, MdWifiCalling3, MdOutlinePhoneInTalk } from "react-icons/md";
 import { FaClipboardList } from "react-icons/fa";
 
 import { contactSend, animbottomtotop } from './css/framer-css.js';
@@ -47,9 +47,10 @@ function Contact() {
     }, [isInView, mainControls])
 
     return (
-        <div className='section contact' id="ContactSection">
+        <div className='section contact'>
             <div className="section-title contact">
                 Contact.
+                <MdWifiCalling3 className='title-ico contact' />
             </div>
             <motion.div
                 className='stack-motion-container'
@@ -58,7 +59,7 @@ function Contact() {
                 initial={"hidden"}
                 animate={mainControls}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                id="ExpSection">
+                id="ContactSection">
                 <Grid className="contact-content" container>
                     <Grid item xs={12} sm={12} md={12}>
                         <div className="contact-grid">

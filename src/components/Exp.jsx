@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView, useAnimationControls } from "framer-motion";
 import Grid from '@mui/material/Grid';
+import { GiStarsStack } from "react-icons/gi";
 
 import { animlefttoright } from './css/framer-css.js';
 import fusionoffice from '../assets/images/fusionoffice.jpg';
@@ -18,15 +19,19 @@ function Exp() {
     const imgControls = useAnimationControls();
     const [hiddenFolder, setHiddenFolder] = useState('fusionex');
 
-    let name, desc, logo;
+    let name, date, position, desc, logo;
 
     if (hiddenFolder === 'recite') {
         name = 'Fusionex';
-        desc = 'A well-known multinational tech company that provides various technological advanced solutions using AI, Big Data and Cloud to its customers!';
+        date = "Sept 2022 - Jan 2023";
+        position = "Front-end Developer"
+        desc = 'Worked as a front-end developer at Fusionex. I was tasked to developed and fixed graphical and UI issues within on their popular data analytic software known as Giant. The stack I was introduced there was mostly related to C# .NET and SASS ';
         logo = fusionlogo;
     } else {
         name = 'Recite Lab';
-        desc = 'A startup company with the main goal aiding Al-Quran readers to improve their reading and pronounciation skills.';
+        date = "May 2021 - Apr 2022";
+        position = "Front-end Developer"
+        desc = `First internship experience as a Software Engineer with focus as on the front-end aspect. Developed a website capable of utilizing Google Vision API to read documents and identify unique ID's within the document. I managed to learn new stacks such as NodeJS and React framework to develop a dashboard system for internal use.`;
         logo = recitelogo;
     }
 
@@ -65,6 +70,7 @@ function Exp() {
         <div className='section exp' >
             <div className="section-title exp">
                 Experience.
+                <GiStarsStack className='title-ico exp' />
             </div>
             <motion.div
                 ref={ref}
@@ -91,6 +97,8 @@ function Exp() {
                             <motion.div
                                 animate={controls}>
                                 <div className="exp-company-title"><h1>{name}</h1></div>
+                                <div className="exp-company-date"><h3>{date}</h3></div>
+                                <div className="exp-company-position"><h4>{position}</h4></div>
                                 <div className="exp-company-desc">{desc}</div>
                                 <img src={logo} alt="Fusionex Logo" className={`folder-logo ${logo === fusionlogo ? 'fusion' : ''}`} />
                             </motion.div>

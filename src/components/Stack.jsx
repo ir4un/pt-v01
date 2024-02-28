@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Grid from '@mui/material/Grid';
 import { motion, useInView, useAnimationControls } from "framer-motion";
+import { HiMiniSquare3Stack3D } from "react-icons/hi2";
 
 import { stackButton, animrighttoleft } from './css/framer-css.js';
 import { stackContent } from './content/stack-content';
@@ -30,7 +31,7 @@ function Stack() {
         });
         imgControls.start({
             x: ['100%', '0%'],
-            opacity: [0, 1],
+            opacity: [0, 0.3],
         });
     }, [imgControls, controls, selectedStack]);
 
@@ -41,9 +42,10 @@ function Stack() {
     }, [isInView, mainControls])
 
     return (
-        <div className='section stack' id="StackSection">
+        <div className='section stack'>
             <div className="section-title stack">
                 Stacks.
+                <HiMiniSquare3Stack3D className='title-ico stack' />
             </div>
             <motion.div
                 className='stack-motion-container'
@@ -52,7 +54,7 @@ function Stack() {
                 initial={"hidden"}
                 animate={mainControls}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                id="ExpSection">
+                id="StackSection">
                 <Grid className="stack-content" container>
                     <Grid item xs={5} sm={5} md={5}>
                         <div className="stack-item details">
@@ -61,15 +63,19 @@ function Stack() {
                                 duration: 1,
                                 x: { duration: 0.5 }
                             }}>
-                                <h1>{selectedStack}</h1>
-                                {selectedDesc}
+                                <div className="stack-title">
+                                    <h1>{selectedStack}</h1>
+                                </div>
+                                <div className="stack-desc">
+                                    {selectedDesc}
+                                </div>
                             </motion.div>
                         </div>
                     </Grid>
                     <Grid item xs={3} sm={3} md={3}>
                         <motion.div className="stack-item logo" animate={imgControls} transition={{
                             ease: "linear",
-                            duration: 1,
+                            duration: 0.8,
                             x: { duration: 0.5 }
                         }}>
                             <img src={selectedLogo} alt={selectedStack} className='selected-logo' />
@@ -86,11 +92,10 @@ function Stack() {
                                         <motion.div
                                             className="stack-grid-item"
                                             variants={stackButton}
-                                            initial={"initial"}
-                                            animate={"animate"}
                                             whileHover={"hoverEffect"}
                                             whileTap={"tapEffect"} key={idx}
                                             onClick={() => handleStackClick(item)}
+                                            onHoverStart={() => handleStackClick(item)}
                                         >
                                             <img src={item.logo} alt={item.name} className='stack-small-logo' />
                                         </motion.div>

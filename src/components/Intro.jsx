@@ -4,11 +4,19 @@ import Grid from '@mui/material/Grid';
 import { motion } from "framer-motion";
 import { Link } from 'react-scroll';
 
+import { FaGithubSquare, FaFacebookSquare, FaLinkedin, FaTrophy, FaYoutube, FaDownload } from "react-icons/fa";
+import { FiChevronsRight } from "react-icons/fi";
+import { GiGraduateCap, GiStarsStack, GiStarMedal } from "react-icons/gi";
+import { HiMiniSquare3Stack3D } from "react-icons/hi2";
+import { IoGameController } from "react-icons/io5";
+import { FaCubes, FaFilePdf } from "react-icons/fa6";
+import { MdWifiCalling3 } from "react-icons/md";
+
 import videoFile from '../assets/videos/animated-bliss.mp4';
 import pfpImg from '../assets/images/irfan-selfcleararm.png';
 import sanity from '../assets/images/sanity.webp';
 
-import { introButtonMotion, introBlueButtonMotion } from './css/framer-css.js'; // Adjust the path as needed
+import { introButtonMotion, introBlueButtonMotion, socialbtnMotion } from './css/framer-css.js'; // Adjust the path as needed
 import './css/component-css.css';
 
 
@@ -58,7 +66,7 @@ function Intro() {
                         columnSpacing={{ xs: 2 }}
                         alignItems="center"
                         justifyContent="center">
-                        <Grid item xs={12} sm={6}>
+                        <Grid item xs={6} sm={6}>
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <Grid container
@@ -67,31 +75,67 @@ function Intro() {
                                 alignItems="center"
                                 justifyContent="center">
                                 <Grid item xs={12} sm={12}>
-                                    <Link
-                                        to={'AboutSection'}
-                                        smooth={true}
-                                        spy={true}
-                                        offset={-300}
-                                        duration={500} >
-                                        <motion.div
-                                            className='intro-btn-big'
-                                            variants={introButtonMotion}
-                                            initial={"initial"}
-                                            animate={"animate"}
-                                            whileHover={"hoverEffect"}
-                                            whileTap={"tapEffect"}>
-                                            <div className='welcome-btn'>
-                                                <img src={sanity} alt="Sanity" />
-                                            </div>
-                                            Welcome!
-                                        </motion.div>
-                                    </Link>
+                                    <div className='multi-btn-container'>
+                                        <Link
+                                            to={'AboutSection'}
+                                            smooth={true}
+                                            spy={true}
+                                            offset={-300}
+                                            duration={500} >
+                                            <motion.div
+                                                className='intro-btn-big'
+                                                variants={introButtonMotion}
+                                                initial={"initial"}
+                                                animate={"animate"}
+                                                whileHover={"hoverEffect"}
+                                                whileTap={"tapEffect"}>
+                                                <div className='welcome-btn'>
+                                                    <img src={sanity} alt="Sanity" />
+                                                </div>
+                                                Welcome!
+                                                <div className="intro-btn-ico welcome">
+                                                    <FiChevronsRight />
+                                                </div>
+                                            </motion.div>
+                                        </Link>
+                                        <div className="side-btn">
+                                            <motion.a className="linkedin-container"
+                                                href="https://www.linkedin.com/in/ir4un/"
+                                                variants={socialbtnMotion}
+                                                whileHover={"LIhoverEffect"}
+                                                whileTap={"LItapEffect"}>
+                                                <FaLinkedin />
+                                            </motion.a>
+                                            <motion.a className="github-container"
+                                                href="https://github.com/ir4un"
+                                                variants={socialbtnMotion}
+                                                whileHover={"GHhoverEffect"}
+                                                whileTap={"GHtapEffect"}>
+                                                <FaGithubSquare />
+                                            </motion.a>
+                                            <motion.a className="fb-container"
+                                                href="https://www.facebook.com/muhammadirfan.zafri.7/"
+                                                variants={socialbtnMotion}
+                                                whileHover={"FBhoverEffect"}
+                                                whileTap={"FBtapEffect"}>
+                                                <FaFacebookSquare />
+                                            </motion.a>
+                                            <motion.a className="youtube-container"
+                                                href="https://youtube.com/@irfanzafri?si=-rhiNlPbRWahCLZc"
+                                                variants={socialbtnMotion}
+                                                whileHover={"YThoverEffect"}
+                                                whileTap={"YTtapEffect"}>
+                                                <FaYoutube />
+                                            </motion.a>
+                                        </div>
+                                    </div>
                                 </Grid>
                                 <Grid item xs={6} sm={6}>
                                     <Link
                                         to={'EduSection'}
                                         smooth={true}
                                         spy={true}
+                                        offset={-200}
                                         duration={500} >
                                         <motion.div
                                             className='intro-btn-small'
@@ -101,6 +145,9 @@ function Intro() {
                                             whileHover={"hoverEffect"}
                                             whileTap={"tapEffect"}>
                                             Education
+                                            <div className="intro-btn-ico edu">
+                                                <GiGraduateCap />
+                                            </div>
                                         </motion.div>
                                     </Link>
                                 </Grid>
@@ -117,41 +164,75 @@ function Intro() {
                                             whileHover={"hoverEffect"}
                                             whileTap={"tapEffect"}>
                                             Experience
+                                            <div className="intro-btn-ico exp">
+                                                <GiStarsStack />
+                                            </div>
                                         </motion.div>
                                     </Link>
                                 </Grid>
-                                <Grid item xs={6} sm={6}>
-                                    <Link
-                                        to={'StackSection'}
-                                        smooth={true}
-                                        spy={true}
-                                        duration={500} ><motion.div
-                                            className='intro-btn-blue'
-                                            variants={introBlueButtonMotion}
-                                            initial={"initial"}
-                                            animate={"animate"}
-                                            whileHover={"hoverEffect"}
-                                            whileTap={"tapEffect"}>
-                                            Stacks
-                                        </motion.div>
-                                    </Link>
-                                </Grid>
-                                <Grid item xs={6} sm={6}>
-                                    <Link
-                                        to={'ProjectSection'}
-                                        smooth={true}
-                                        spy={true}
-                                        duration={500} >
-                                        <motion.div
-                                            className='intro-btn-blue'
-                                            variants={introBlueButtonMotion}
-                                            initial={"initial"}
-                                            animate={"animate"}
-                                            whileHover={"hoverEffect"}
-                                            whileTap={"tapEffect"}>
-                                            Projects
-                                        </motion.div>
-                                    </Link>
+                                <Grid item xs={12} sm={12}>
+                                    <div className="intro-btn-spilt">
+                                        <Link
+                                            to={'StackSection'}
+                                            smooth={true}
+                                            spy={true}
+                                            duration={500} ><motion.div
+                                                className='intro-btn-blue first'
+                                                variants={introBlueButtonMotion}
+                                                initial={"initial"}
+                                                animate={"animate"}
+                                                whileHover={"hoverEffect"}
+                                                whileTap={"tapEffect"}>
+                                                Stacks
+                                                <div className="intro-btn-ico stack">
+                                                    <HiMiniSquare3Stack3D />
+                                                </div>
+                                            </motion.div>
+                                        </Link>
+                                        <div className="mini-btn-title">
+                                            <div className="mini-btn-ico">
+                                                <FaTrophy />
+                                            </div>
+                                            Accomplishments
+                                        </div>
+                                        <Link
+                                            to={'ProjectSection'}
+                                            smooth={true}
+                                            spy={true}
+                                            duration={500} >
+                                            <motion.div
+                                                className='intro-btn-blue'
+                                                variants={introBlueButtonMotion}
+                                                initial={"initial"}
+                                                animate={"animate"}
+                                                whileHover={"hoverEffect"}
+                                                whileTap={"tapEffect"}>
+                                                Projects
+                                                <div className="intro-btn-ico project">
+                                                    <FaCubes />
+                                                </div>
+                                            </motion.div>
+                                        </Link>
+                                        <Link
+                                            to={'ActivitiesSection'}
+                                            smooth={true}
+                                            spy={true}
+                                            offset={-120}
+                                            duration={500} >
+                                            <motion.div
+                                                className='intro-btn-blue'
+                                                variants={introBlueButtonMotion}
+                                                initial={"initial"}
+                                                animate={"animate"}
+                                                whileHover={"hoverEffect"}
+                                                whileTap={"tapEffect"}>
+                                                Hackathons
+                                                <div className="intro-btn-ico activity">
+                                                    <GiStarMedal />
+                                                </div>
+                                            </motion.div>
+                                        </Link>
+                                    </div>
                                 </Grid>
                                 <Grid item xs={5} sm={5}>
                                     <Link
@@ -167,26 +248,45 @@ function Intro() {
                                             whileHover={"hoverEffect"}
                                             whileTap={"tapEffect"}>
                                             Hobbies
+                                            <div className="intro-btn-ico hobby">
+                                                <IoGameController />
+                                            </div>
                                         </motion.div>
                                     </Link>
                                 </Grid>
-
                                 <Grid item xs={7} sm={7}>
-                                    <Link
-                                        to={'ContactSection'}
-                                        smooth={true}
-                                        spy={true}
-                                        duration={500} >
-                                        <motion.div
-                                            className='intro-btn-small'
-                                            variants={introButtonMotion}
-                                            initial={"initial"}
-                                            animate={"animate"}
-                                            whileHover={"hoverEffect"}
-                                            whileTap={"tapEffect"}>
-                                            Contact
-                                        </motion.div>
-                                    </Link>
+                                    <div className='multi-btn-container'>
+                                        <Link
+                                            to={'ContactSection'}
+                                            smooth={true}
+                                            spy={true}
+                                            duration={500} >
+                                            <motion.div
+                                                className='intro-btn-small'
+                                                variants={introButtonMotion}
+                                                initial={"initial"}
+                                                animate={"animate"}
+                                                whileHover={"hoverEffect"}
+                                                whileTap={"tapEffect"}>
+                                                Contact
+                                                <div className="intro-btn-ico contact">
+                                                    <MdWifiCalling3 />
+                                                </div>
+                                            </motion.div>
+                                        </Link>
+                                        <div className="side-btn big">
+                                            <motion.a className="resume-container"
+                                                href=""
+                                                variants={socialbtnMotion}
+                                                whileHover={"PDFhoverEffect"}
+                                                whileTap={"PDFtapEffect"}>
+                                                <FaFilePdf />
+                                                <div className="pdf-ico">
+                                                    <FaDownload />
+                                                </div>
+                                            </motion.a>
+                                        </div>
+                                    </div>
                                 </Grid>
                             </Grid>
                         </Grid>

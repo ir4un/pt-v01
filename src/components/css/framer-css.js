@@ -38,15 +38,50 @@ export const introBlueButtonMotion = {
     }
 };
 
+export const socialbtnMotion = {
+    LItapEffect: {
+        backgroundColor: '#063d75',
+        transition: { duration: 0.2 }
+    },
+    LIhoverEffect: {
+        backgroundColor: '#074b8f',
+        transition: { duration: 0.2 }
+    },
+    GHtapEffect: {
+        backgroundColor: '#010409',
+        transition: { duration: 0.2 }
+    },
+    GHhoverEffect: {
+        backgroundColor: '#1b2330',
+        transition: { duration: 0.2 }
+    },
+    FBtapEffect: {
+        backgroundColor: '#022865',
+        transition: { duration: 0.2 }
+    },
+    FBhoverEffect: {
+        backgroundColor: '#0547b2',
+        transition: { duration: 0.2 }
+    },
+    YTtapEffect: {
+        backgroundColor: '#650000',
+        transition: { duration: 0.2 }
+    },
+    YThoverEffect: {
+        backgroundColor: '#b20000',
+        transition: { duration: 0.2 }
+    },
+    PDFtapEffect: {
+        backgroundColor: '#470400',
+        transition: { duration: 0.2 }
+    },
+    PDFhoverEffect: {
+        backgroundColor: '#7a0700',
+        transition: { duration: 0.2 }
+    }
+};
+
 export const stackButton = {
-    initial: {
-        opacity: 0,
-        transition: { duration: 0.8, delay: 0.2 }
-    },
-    animate: {
-        opacity: 1,
-        transition: { duration: 0.8, delay: 0.2 }
-    },
     tapEffect: {
         backgroundImage: 'linear-gradient(to right, rgba(10, 10, 10, 1) 0%, rgba(0, 0, 0, 1) 100%)',
         transition: { duration: 0 },

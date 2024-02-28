@@ -3,6 +3,7 @@
 body {
     margin: 0;
     background: linear-gradient(to bottom, #262626, #262626);
+    font-family: "Poppins", sans-serif;
 }
 
 .preloader {

@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { motion, useInView, useAnimationControls } from "framer-motion";
+import { FaCubes } from "react-icons/fa6";
 
 import { projectButton, animlefttoright } from './css/framer-css.js';
 import { projectContent } from './content/project-content';
@@ -21,9 +22,10 @@ function Project() {
     }, [isInView, mainControls])
 
     return (
-        <div className='section project' id="ProjectSection">
+        <div className='section project'>
             <div className="section-title project">
                 Projects.
+                <FaCubes className='title-ico project' />
             </div>
             <motion.div
                 ref={ref}
@@ -31,7 +33,7 @@ function Project() {
                 initial={"hidden"}
                 animate={mainControls}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                id="ExpSection">
+                id="ProjectSection">
                 <Container className="project-content" sx={{ py: 8 }} maxWidth="md">
                     <Grid container spacing={4}>
                         <Grid item xs={12} sm={12} md={12}>
@@ -43,7 +45,7 @@ function Project() {
                                             <motion.div
                                                 className="project-grid-item-effect"
                                                 variants={projectButton}
-                                                transition={"initial"}
+                                                transition={"transition"}
                                                 whileHover={"hoverEffect"}
                                             // onClick={() => handleStackClick(item)}
                                             >

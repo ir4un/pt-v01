@@ -10,10 +10,15 @@ import Exp from './components/Exp';
 import Stack from './components/Stack';
 import Project from './components/Project';
 import Contact from './components/Contact';
+import Activities from './components/Activities';
+import Footer from './components/Footer';
+
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme({
-
+  typography: {
+    "fontFamily": `"Poppins", sans-serif`,
+  }
 });
 
 function App() {
@@ -53,7 +58,9 @@ function App() {
             <Exp />
             <Stack />
             <Project />
+            <Activities />
             <Contact />
+            <Footer />
           </main>
         </ThemeProvider>
       </div>

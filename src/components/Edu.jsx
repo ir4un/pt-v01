@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { motion, useInView, useAnimationControls } from "framer-motion";
+import { GiGraduateCap } from "react-icons/gi";
 
 import { animrighttoleft } from './css/framer-css.js';
 import EduItem from './EduItem';
@@ -32,9 +33,10 @@ function Edu() {
     }, [isInView, mainControls])
 
     return (
-        <div className='section edu' >
+        <div className='section edu'>
             <div className="section-title edu">
                 Education.
+                <GiGraduateCap className='title-ico edu' />
             </div>
             <Container className="edu-content" sx={{ py: 8 }}>
                 <motion.div
