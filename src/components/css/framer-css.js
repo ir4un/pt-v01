@@ -99,18 +99,45 @@ export const projectButton = {
     transition: {
         opacity: 1,
         transition: { duration: 0.2, },
-        y: ['0%']
     },
     tapEffect: {
-        transition: { duration: 0.5 },
-        cursor: 'pointer'
+        y: ['0%', '-20%'],
+        transition: { duration: 0.2, },
     },
     hoverEffect: {
         cursor: 'pointer',
         y: ['0%', '-20%'],
+        transition: { duration: 0.2, },
 
     },
 
+};
+
+export const activityControl = {
+    tapEffect: {
+        opacity: 1,
+        transition: { duration: 0 },
+        cursor: 'pointer'
+    },
+    hoverEffect: {
+        opacity: 0.7,
+        transition: { duration: 0 },
+        cursor: 'pointer'
+
+    }
+};
+
+export const activityDots = {
+    tapEffect: {
+        opacity: 1,
+        transition: { duration: 0 },
+        cursor: 'pointer'
+    },
+    hoverEffect: {
+        opacity: 0.8,
+        transition: { duration: 0 },
+        cursor: 'pointer'
+    }
 };
 
 export const contactSend = {

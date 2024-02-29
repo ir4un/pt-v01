@@ -4,6 +4,11 @@
     --slide-width: 25vw;
 }
 
+#message {
+    font-family: "Poppins", sans-serif !;
+
+}
+
 .IntroMain {
     height: 600px;
 }
@@ -26,8 +31,7 @@
     color: #fff;
     font-size: 150px;
     font-weight: bold;
-    position: absolute;
-    left: 0;
+    position: relative;
     display: flex;
     justify-content: flex-start;
     padding-right: 15px;
@@ -39,6 +43,12 @@
         0px -4px 10px rgba(255, 255, 255, 0.3);
 }
 
+.title {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .title-ico {
     position: absolute;
     right: 0;
@@ -46,6 +56,7 @@
 
 .title-ico.smile {
     top: 58px;
+    font-size: 110px;
 }
 
 .title-ico.edu {
@@ -293,6 +304,7 @@
 }
 
 .divider {
+    position: relative;
     width: 100%;
     height: 50px;
     background-color: #000000;
@@ -488,6 +500,10 @@
 .edu-selector:hover {
     cursor: pointer;
     background-color: #4c4c4c;
+}
+
+.edu-selector.selected {
+    background-color: #3d3939;
 }
 
 .edu-selector.diploma::after {
@@ -724,6 +740,7 @@
     min-height: 500px;
     background-color: #4f4f4f;
     padding: 30px;
+    overflow: hidden;
 
 }
 
@@ -1394,10 +1411,7 @@
     align-items: center;
     justify-content: center;
     top: 0;
-}
-
-.carousel-control:hover {
-    background-color: #464646;
+    opacity: 0.3;
 }
 
 .carousel-arrow-ico {
@@ -1475,6 +1489,7 @@
     position: absolute;
     transform: translate(-50%, 100%);
     z-index: 3;
+    opacity: 0.8;
 }
 
 .carousel-dot {
@@ -1530,6 +1545,7 @@
 }
 
 .carousel-title {
+    text-align: center;
     margin-top: 10px;
 }
 
@@ -1612,6 +1628,7 @@
     transform: translateX(-50%);
     width: 500px;
     height: 500px;
+    z-index: 1;
 }
 
 .loli-gif {
@@ -1642,104 +1659,87 @@
 /* Misc */
 
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    /* Styles for screens between 768px and 1024px */
+@media screen and (max-width: 1460px) {
+    .project-grid {
+        grid-template-columns: auto auto;
+    }
 }
 
-@media screen and (min-width: 1024px) {
-    /* Styles for screens larger than 1024px */
-}
+@media screen and (max-width: 1200px) {
 
-@media screen and (max-width: 400px) {
+    .intro-btn-small,
+    .intro-btn-big {
+        height: 100px;
+        font-size: 20px;
+    }
 
-    /* Intro Section*/
-    .IntroMain {
+    .intro-btn-spilt .intro-btn-blue,
+    .intro-btn-spilt .intro-btn-blue.first {
+        font-size: 15px;
+    }
+
+    .intro-btn-spilt {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        /* Prevent wrapping to the next row */
+        justify-content: flex-start;
         position: relative;
-        overflow: hidden;
+        width: 100%;
+        margin-left: 15px;
     }
 
-    .level {
-        width: 150px;
-        height: 45px;
-        position: absolute;
-        top: 105px;
-        left: -18px;
-        background-color: #333333;
-        margin: 0;
-        ;
-        z-index: -1;
+    .intro-btn-ico.welcome {
+        font-size: 155px;
     }
 
-    .pfpContainer {
-        position: absolute;
-        bottom: -8px;
-        left: 50%;
-        transform: translateX(-50%);
-        margin: 0;
-        z-index: -1;
+    .intro-btn-ico.edu {
+        right: 8px;
+        top: -10px;
+        font-size: 100px;
     }
 
-    .pfpContainer img {
-        width: 550px;
-    }
-
-    .section-title {
-        font-size: 60px;
-    }
-
-    .title-ico.smile {
-        top: 21px;
-    }
-
-    .section-title.about {
-        top: -22px;
-    }
-
-    .player {
-        width: 350px;
-    }
-
-    .mini-btn-title {
-        display: none;
+    .intro-btn-ico.activity {
+        right: 72px;
     }
 
     .side-btn {
-        top: -45px;
-        right: -18px;
+        top: -15px;
+
     }
 
-    .intro-btn-big,
-    .intro-btn-small,
-    .intro-btn-blue {
-        display: none;
-    }
-
-    .side-btn.big {
-        width: 185px;
-        top: 10px;
+    .title {
         left: 50%;
         transform: translateX(-50%);
     }
 
-    .intro-desc {
-        left: 50%;
-        bottom: 21px;
-        margin: 0;
-        transform: rotate(0deg) skewX(0deg) translateX(-50%);
+    .title-ico {
+        display: none;
     }
 
-    .title-ico.smile {
-        top: 24px;
-        font-size: 50px;
-
+    .section-title {
+        font-size: 35px;
     }
 
     /* About Section*/
 
     .about-content {
         margin-top: 0;
+        margin-bottom: -40px;
     }
 
+    .about-content p {
+        font-size: 12px;
+    }
+
+    .section-title.about {
+        top: 15px;
+    }
+
+    .player {
+        width: 500px;
+        height: 305px;
+    }
 
     /* Edu Section*/
 
@@ -1748,17 +1748,11 @@
     }
 
     .edu-content {
-        margin-top: 60px;
-    }
-
-    .title-ico.edu {
-        top: 75px;
-        left: 50%;
-        transform: translateX(-50%);
+        margin-top: 16px;
     }
 
     .edu-selector-container {
-        margin-top: 0;
+        margin-top: 10px;
     }
 
     .edu-title {
@@ -1779,12 +1773,6 @@
         margin-top: 88px;
     }
 
-    .title-ico.exp {
-        top: 75px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
     .exp-company-title h1 {
         margin-bottom: 0px;
         margin-top: 0;
@@ -1796,7 +1784,7 @@
     }
 
     .exp-company-desc {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .folder-area {
@@ -1823,23 +1811,20 @@
         margin-top: 60px;
     }
 
-    .title-ico.stack {
-        top: 75px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
     .section.stack {
         margin-top: 25px;
     }
 
-    .stack-item {
-        height: 245px;
-    }
 
     .stack-item.logo {
         display: none;
     }
+
+    .stack-item {
+        height: 150px;
+    }
+
+
 
     .stack-item.list {
         overflow-x: auto;
@@ -1848,7 +1833,6 @@
 
     .stack-grid {
         display: flex;
-        /* Use flexbox for the grid container */
         padding: 10px;
         gap: 10px;
         /* Adjust the gap between grid items */
@@ -1887,6 +1871,9 @@
         margin-bottom: 10px;
     }
 
+    .stack-desc {
+        font-size: 15px
+    }
 
     /* Project Section*/
 
@@ -1898,13 +1885,244 @@
         margin-top: 60px;
     }
 
-    .title-ico.project {
-        top: 75px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
     .section.project {
         margin-top: 25px;
+    }
+
+    .project-grid-item {
+        height: 210px;
+        width: 350px;
+    }
+
+    .project-grid {
+        grid-template-columns: auto auto;
+    }
+
+    .project-grid-content {
+        padding: 10px;
+    }
+
+    .project-grid-item-effect {
+        height: 472px;
+
+    }
+
+    .project-name {
+        font-size: 20px;
+    }
+
+    .project-desc {
+        font-size: 12px;
+    }
+
+    /* Activity Section*/
+
+    .section-title.activities {
+        top: 0;
+    }
+
+    .activities-content {
+        margin-top: 60px;
+    }
+
+    .section.activities {
+        margin-top: 25px;
+    }
+
+    .carousel-slide {
+        transform: scale(0.2) translate(-50%, -50%);
+    }
+
+    .carousel-slides {
+        margin: -75px 0 0 0;
+    }
+
+    .carousel-slide.is-active {
+        transform: scale(0.7) translate(-50%, -50%);
+    }
+
+    .carousel-slide.is-left {
+        transform: scale(0.2) translate(-150%, -50%);
+    }
+
+    .carousel-slide.is-right {
+        transform: scale(0.2) translate(50%, -50%);
+    }
+
+    .carousel-control {
+        height: 99px;
+        bottom: 20px;
+        top: auto;
+    }
+
+    .carousel-title {
+        min-height: 42px;
+    }
+
+    .carousel-title h2 {
+        font-size: 14px;
+    }
+
+    .carousel-status p {
+        font-size: 10px;
+    }
+
+    .carousel-desc {
+        font-size: 10px;
+    }
+
+    .activities-content {
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+
+    /* Contact Section */
+    .section-title.contact {
+        top: 0;
+    }
+
+    .contact-content {
+        margin-top: 95px;
+    }
+
+    .contact-grid {
+        margin: 0 10px;
+
+    }
+
+    .contact-grid-item {
+        font-size: 14px;
+    }
+
+    .copy-btn {
+        padding-left: 0px;
+        justify-content: center;
+        width: 100%;
+        bottom: 0;
+        top: auto;
+        font-size: 15px;
+    }
+
+    /* Footer Section */
+
+    .amiya-img {
+        width: 375px;
+        height: 375px;
+    }
+
+    .loli-gif {
+        right: -50px;
+    }
+
+    .gup-gif {
+        left: 0%;
+        width: 150px;
+        height: 150px;
+    }
+
+    .cat-gif {
+        bottom: 0px;
+        right: -31px;
+        width: 180px;
+        height: 180px;
+    }
+
+
+}
+
+@media screen and (max-width: 900px) {}
+
+@media screen and (max-width: 760px) {
+    .project-grid {
+        grid-template-columns: auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    /* Intro Section*/
+
+    .IntroMain {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .level {
+        width: 150px;
+        height: 45px;
+        position: absolute;
+        top: 105px;
+        left: -18px;
+        background-color: #333333;
+        margin: 0;
+
+        z-index: -1;
+    }
+
+    .pfpContainer {
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        z-index: -1;
+    }
+
+    .pfpContainer img {
+        width: 860px;
+    }
+
+    .mini-btn-title {
+        display: none;
+    }
+
+    .side-btn {
+        top: -45px;
+        right: -18px;
+    }
+
+    .intro-btn-big,
+    .intro-btn-small,
+    .intro-btn-blue {
+        display: none;
+    }
+
+    .side-btn.big {
+        width: 185px;
+        top: 10px;
+        right: 0;
+
+    }
+
+    .intro-desc {
+        left: 50%;
+        bottom: 21px;
+        margin: 0;
+        transform: rotate(0deg) skewX(0deg) translateX(-50%);
+    }
+
+    .player {
+        width: 350px;
+
+    }
+
+    .edu-logo {
+        width: 100%;
+
+    }
+
+
+}
+
+@media screen and (max-width: 400px) {
+    .pfpContainer img {
+        width: 550px;
+    }
+
+    .side-btn.big {
+        width: 185px;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }

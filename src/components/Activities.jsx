@@ -39,7 +39,9 @@ function Activities() {
     return (
         <div className='section activities'>
             <div className="section-title activities">
-                Hackathons.
+                <div className="title">
+                    Hackathons.
+                </div>
                 <GiStarMedal className='title-ico activity' />
             </div>
             <motion.div

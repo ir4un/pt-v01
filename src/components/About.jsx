@@ -6,7 +6,9 @@ function About() {
     return (
         <div className='section about' id="AboutSection">
             <div className="section-title about">
-                About Me.
+                <div className="title">
+                    About Me.
+                </div>
                 <FaFaceSmileWink className='title-ico smile' />
             </div>
             <Container sx={{ py: 8 }} maxWidth="md">

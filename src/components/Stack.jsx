@@ -8,7 +8,8 @@ import { stackButton, animrighttoleft } from './css/framer-css.js';
 import { stackContent } from './content/stack-content';
 
 function Stack() {
-    const isMobile = useMediaQuery(theme => theme.breakpoints.down('sm'));
+
+    const isMobile = useMediaQuery('(max-width: 1200px)');
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
     const mainControls = useAnimationControls();
@@ -17,7 +18,6 @@ function Stack() {
     const [selectedStack, setSelectedStack] = useState(stackContent.java[0].name);
     const [selectedDesc, setSelectedDesc] = useState(stackContent.java[0].desc);
     const [selectedLogo, setSelectedLogo] = useState(stackContent.java[0].logo);
-
 
     const handleStackClick = (clickedItem) => {
         setSelectedStack(clickedItem.name);
@@ -46,7 +46,9 @@ function Stack() {
     return (
         <div className='section stack'>
             <div className="section-title stack">
-                Stacks.
+                <div className="title">
+                    Stacks.
+                </div>
                 <HiMiniSquare3Stack3D className='title-ico stack' />
             </div>
             <motion.div
@@ -59,7 +61,7 @@ function Stack() {
                 id="StackSection">
                 <Grid className="stack-content" container
                     direction={isMobile ? "column-reverse" : "none"}>
-                    <Grid item xs={12} sm={5} md={5} style={{ maxWidth: "none" }}>
+                    <Grid item xs={12} sm={12} md={5} style={{ maxWidth: "none" }}>
                         <div className="stack-item details">
                             <motion.div animate={controls} transition={{
                                 ease: "linear",
@@ -75,7 +77,7 @@ function Stack() {
                             </motion.div>
                         </div>
                     </Grid>
-                    <Grid item xs={0} sm={4} md={3}>
+                    <Grid item xs={0} sm={0} md={3}>
                         <motion.div className="stack-item logo" animate={imgControls} transition={{
                             ease: "linear",
                             duration: 0.8,
@@ -84,7 +86,7 @@ function Stack() {
                             <img src={selectedLogo} alt={selectedStack} className='selected-logo' />
                         </motion.div>
                     </Grid>
-                    <Grid item xs={12} sm={4} md={4} style={{ maxWidth: "100%" }}>
+                    <Grid item xs={12} sm={12} md={4} style={{ maxWidth: "100%" }}>
                         <div className="stack-item list">
                             <div className="stack-list-background">
                                 <br></br>

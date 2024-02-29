@@ -69,7 +69,9 @@ function Exp() {
     return (
         <div className='section exp' >
             <div className="section-title exp">
-                Experience.
+                <div className="title">
+                    Experience.
+                </div>
                 <GiStarsStack className='title-ico exp' />
             </div>
             <motion.div

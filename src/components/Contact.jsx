@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import Grid from '@mui/material/Grid';
 import { motion, useInView, useAnimationControls } from "framer-motion";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import emailjs from '@emailjs/browser';
 
 import { FaRegPaperPlane } from "react-icons/fa6";
 import { MdOutlineEmail, MdWifiCalling3, MdOutlinePhoneInTalk } from "react-icons/md";
@@ -17,28 +20,66 @@ function Contact() {
     const isInView = useInView(ref, { once: true });
     const mainControls = useAnimationControls();
 
-    const [formData, setFormData] = useState({
-        name: '',
-        message: ''
-    });
+    const [name, setName] = useState('');
+    const [message, setMessage] = useState('');
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    };
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission here, e.g., send data to backend
-        console.log(formData);
-        // Reset form fields after submission
-        setFormData({
-            name: '',
-            message: ''
-        });
+
+        const serviceID = "service_rewv9dj";
+        const templateID = "template_nche9ns";
+        const publicKey = "1C4ZRg0R6AiMbcKLq";
+
+        const templateParams = {
+            from_name: name,
+            from_email: 'ir4un99@gmail.com',
+            to_name: "ir4un",
+            message: message
+        };
+
+        emailjs.send(serviceID, templateID, templateParams, publicKey)
+            .then((response) => {
+                console.log('Email Has Been Sent To The Dokutah!', response.status, response.text);
+                setName('');
+                setMessage('');
+                toast.success('Thanks! Your Message Has Been Sent. 🫡', {
+                    position: "bottom-center",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                });
+            },
+                (error) => {
+                    console.log('Error Happened While Sending Email', error);
+                },
+            );
     };
+
+    const copyNumber = (text) => {
+        toast.success('Copied!', {
+            position: "bottom-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+        });
+        navigator.clipboard.writeText(text)
+            .then(() => {
+
+                console.log('Text copied to clipboard:', text);
+            })
+            .catch(error => {
+                console.error('Error copying text to clipboard:', error);
+            });
+    };
+
 
     useEffect(() => {
         if (isInView) {
@@ -49,7 +90,9 @@ function Contact() {
     return (
         <div className='section contact'>
             <div className="section-title contact">
-                Contact.
+                <div className="title">
+                    Contact.
+                </div>
                 <MdWifiCalling3 className='title-ico contact' />
             </div>
             <motion.div
@@ -60,7 +103,7 @@ function Contact() {
                 animate={mainControls}
                 transition={{ duration: 0.5, delay: 0.5 }}
                 id="ContactSection">
-                <Grid className="contact-content" container>
+                <Grid className="contact-content" container >
                     <Grid item xs={12} sm={12} md={12}>
                         <div className="contact-grid">
                             <div className="contact-grid-item">
@@ -72,7 +115,8 @@ function Contact() {
                                 <motion.div className="copy-btn"
                                     variants={contactSend}
                                     whileHover={"hoverEffect"}
-                                    whileTap={"tapEffect"}>
+                                    whileTap={"tapEffect"}
+                                    onClick={() => copyNumber("0172778201")}>
                                     <div className="contact-copy-ico">
                                         <FaClipboardList />
                                     </div>
@@ -88,7 +132,8 @@ function Contact() {
                                 <motion.div className="copy-btn"
                                     variants={contactSend}
                                     whileHover={"hoverEffect"}
-                                    whileTap={"tapEffect"}>
+                                    whileTap={"tapEffect"}
+                                    onClick={() => copyNumber("realir4un@gmail.com")}>
                                     <div className="contact-copy-ico">
                                         <FaClipboardList />
                                     </div>
@@ -103,16 +148,16 @@ function Contact() {
                                         type="text"
                                         id="name"
                                         name="name"
-                                        value={formData.name}
-                                        onChange={handleChange}
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
                                         required
                                     />
                                     <label htmlFor="message">Message</label>
                                     <textarea
                                         id="message"
                                         name="message"
-                                        value={formData.message}
-                                        onChange={handleChange}
+                                        value={message}
+                                        onChange={(e) => setMessage(e.target.value)}
                                         required
                                     />
                                     <motion.button

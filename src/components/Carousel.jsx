@@ -1,5 +1,7 @@
 import { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
+import { activityControl, activityDots } from './css/framer-css.js';
+import { motion } from "framer-motion";
 
 import { MdOutlineArrowBackIosNew, MdOutlineArrowForwardIos } from "react-icons/md";
 
@@ -48,23 +50,29 @@ function Carousel({ children = [], height, updateActivityData }) {
             </ul>
 
             <div className="carousel-controls">
-                <div
+                <motion.div
                     className="carousel-control is-prev"
-                    onClick={() => goToSlide(current - 1)}>
+                    onClick={() => goToSlide(current - 1)}
+                    variants={activityControl}
+                    whileHover={"hoverEffect"}
+                    whileTap={"tapEffect"}>
                     <div className="carousel-arrow-ico">
                         <MdOutlineArrowBackIosNew />
                     </div>
                     <br></br>
-                </div>
+                </motion.div>
 
-                <div
+                <motion.div
                     className="carousel-control is-next"
-                    onClick={() => goToSlide(current + 1)}>
+                    onClick={() => goToSlide(current + 1)}
+                    variants={activityControl}
+                    whileHover={"hoverEffect"}
+                    whileTap={"tapEffect"}>
                     <div className="carousel-arrow-ico">
                         <MdOutlineArrowForwardIos />
                     </div>
                     <br></br>
-                </div>
+                </motion.div>
             </div>
 
             <ul className="carousel-dots">
@@ -72,8 +80,14 @@ function Carousel({ children = [], height, updateActivityData }) {
                     <li
                         className={`carousel-dot ${current === index ? "is-active" : ""}`}
                         key={index}
-                        style={{ color: current === index ? "red" : "" }}>
-                        <button onClick={() => goToSlide(index)} />
+                        style={{ color: current === index ? "red" : "" }}
+
+                    >
+                        <motion.button
+                            onClick={() => goToSlide(index)}
+                            variants={activityDots}
+                            whileHover={"hoverEffect"}
+                            whileTap={"tapEffect"} />
                     </li>
                 ))}
             </ul>

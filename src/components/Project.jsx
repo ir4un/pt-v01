@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { motion, useInView, useAnimationControls } from "framer-motion";
@@ -14,6 +14,17 @@ function Project() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
     const mainControls = useAnimationControls();
+    const [clickType, setClickType] = useState(null);
+
+    const handleTouchStart = () => {
+        setClickType('touch');
+    };
+
+    const handleClick = () => {
+        if (clickType !== 'touch') {
+            setClickType('mouse');
+        }
+    };
 
     useEffect(() => {
         if (isInView) {
@@ -24,7 +35,9 @@ function Project() {
     return (
         <div className='section project'>
             <div className="section-title project">
-                Projects.
+                <div className="title">
+                    Projects.
+                </div>
                 <FaCubes className='title-ico project' />
             </div>
             <motion.div
@@ -34,7 +47,7 @@ function Project() {
                 animate={mainControls}
                 transition={{ duration: 0.5, delay: 0.5 }}
                 id="ProjectSection">
-                <Container className="project-content" sx={{ py: 8 }} maxWidth="md">
+                <Container className="project-content" sx={{ py: 4 }} maxWidth="md">
                     <Grid container spacing={4}>
                         <Grid item xs={12} sm={12} md={12}>
                             <div className="project-grid">
@@ -45,8 +58,10 @@ function Project() {
                                             <motion.div
                                                 className="project-grid-item-effect"
                                                 variants={projectButton}
-                                                transition={"transition"}
                                                 whileHover={"hoverEffect"}
+                                                whileTap={clickType === 'touch' ? 'tapEffect' : ''}
+                                                onTouchStart={handleTouchStart}
+                                                onClick={handleClick}
                                             // onClick={() => handleStackClick(item)}
                                             >
                                                 <div className="project-grid-content">

@@ -66,15 +66,15 @@ function Intro() {
                         columnSpacing={{ xs: 2 }}
                         alignItems="center"
                         justifyContent="center">
-                        <Grid item xs={6} sm={6}>
+                        <Grid item xs={6} sm={3} md={6}>
                         </Grid>
-                        <Grid item xs={12} sm={6}>
+                        <Grid item xs={12} sm={9} md={6}>
                             <Grid container
                                 columnSpacing={{ xs: 2 }}
                                 rowSpacing={2}
                                 alignItems="center"
                                 justifyContent="center">
-                                <Grid item xs={12} sm={12}>
+                                <Grid item xs={12} sm={12} >
                                     <div className='multi-btn-container'>
                                         <Link
                                             to={'AboutSection'}

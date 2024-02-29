@@ -12,6 +12,7 @@ import Project from './components/Project';
 import Contact from './components/Contact';
 import Activities from './components/Activities';
 import Footer from './components/Footer';
+import { ToastContainer } from 'react-toastify';
 
 
 // TODO remove, this demo shouldn't need to reset the theme.
@@ -63,6 +64,17 @@ function App() {
             <Footer />
           </main>
         </ThemeProvider>
+        <ToastContainer
+          position="bottom-center"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored" />
       </div>
     </>
   )

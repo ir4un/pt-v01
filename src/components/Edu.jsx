@@ -35,10 +35,12 @@ function Edu() {
     return (
         <div className='section edu'>
             <div className="section-title edu">
-                Education.
+                <div className="title">
+                    Education.
+                </div>
                 <GiGraduateCap className='title-ico edu' />
             </div>
-            <Container className="edu-content" sx={{ py: 8 }}>
+            <Container className="edu-content" sx={{ py: 4 }}>
                 <motion.div
                     ref={ref}
                     variants={animrighttoleft}
@@ -46,8 +48,13 @@ function Edu() {
                     animate={mainControls}
                     transition={{ duration: 0.5, delay: 0.5 }}
                     id="EduSection">
-                    <Grid container>
-                        <Grid item xs={12} sm={2} md={2}>
+                    <Grid container
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                        }}>
+                        <Grid item xs={12} sm={12} md={4}>
                             <div className="edu-selector-container">
                                 <div
                                     className={`edu-selector ${selectedEducation === 'SPM' ? 'selected' : ''}`}
@@ -66,7 +73,7 @@ function Edu() {
                                 </div>
                             </div>
                         </Grid>
-                        <Grid item xs={12} sm={10} md={10}>
+                        <Grid item xs={12} sm={10} md={8}>
                             <EduItem selectedEducation={selectedEducation} isRevealed={isContentRevealed} />
                         </Grid>
                     </Grid>
