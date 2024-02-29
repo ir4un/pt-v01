@@ -10,10 +10,6 @@ import { MdOutlineEmail, MdWifiCalling3, MdOutlinePhoneInTalk } from "react-icon
 import { FaClipboardList } from "react-icons/fa";
 
 import { contactSend, animbottomtotop } from './css/framer-css.js';
-// import { projectContent } from './content/project-content.js';
-// import example from '../assets/images/example.jpg';
-// import recitelogo from '../assets/images/reciteclearnoradius.png';
-
 function Contact() {
 
     const ref = useRef(null);

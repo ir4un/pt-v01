@@ -17,6 +17,9 @@ function Footer() {
                 <img src={gupgif} alt="Your Image" className='gup-gif' />
                 <img src={catto1} alt="Your Image" className='cat-gif' />
             </div>
+            <div id="stars"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
         </div>
     )
 }

@@ -22,6 +22,16 @@ import './css/component-css.css';
 
 function Intro() {
 
+    function downloadFile(filename) {
+        const anchor = document.createElement('a');
+        anchor.href = `../assets/${filename}`;
+        anchor.download = filename;
+        anchor.style.display = 'none';
+        document.body.appendChild(anchor);
+        anchor.click();
+        document.body.removeChild(anchor);
+    }
+
     return (
         <div className='IntroMain'>
             <div className="video-container">
@@ -101,6 +111,7 @@ function Intro() {
                                         <div className="side-btn">
                                             <motion.a className="linkedin-container"
                                                 href="https://www.linkedin.com/in/ir4un/"
+                                                target="_blank"
                                                 variants={socialbtnMotion}
                                                 whileHover={"LIhoverEffect"}
                                                 whileTap={"LItapEffect"}>
@@ -108,6 +119,7 @@ function Intro() {
                                             </motion.a>
                                             <motion.a className="github-container"
                                                 href="https://github.com/ir4un"
+                                                target="_blank"
                                                 variants={socialbtnMotion}
                                                 whileHover={"GHhoverEffect"}
                                                 whileTap={"GHtapEffect"}>
@@ -115,6 +127,7 @@ function Intro() {
                                             </motion.a>
                                             <motion.a className="fb-container"
                                                 href="https://www.facebook.com/muhammadirfan.zafri.7/"
+                                                target="_blank"
                                                 variants={socialbtnMotion}
                                                 whileHover={"FBhoverEffect"}
                                                 whileTap={"FBtapEffect"}>
@@ -122,6 +135,7 @@ function Intro() {
                                             </motion.a>
                                             <motion.a className="youtube-container"
                                                 href="https://youtube.com/@irfanzafri?si=-rhiNlPbRWahCLZc"
+                                                target="_blank"
                                                 variants={socialbtnMotion}
                                                 whileHover={"YThoverEffect"}
                                                 whileTap={"YTtapEffect"}>
@@ -276,10 +290,10 @@ function Intro() {
                                         </Link>
                                         <div className="side-btn big">
                                             <motion.a className="resume-container"
-                                                href=""
                                                 variants={socialbtnMotion}
                                                 whileHover={"PDFhoverEffect"}
-                                                whileTap={"PDFtapEffect"}>
+                                                whileTap={"PDFtapEffect"}
+                                                onClick={() => downloadFile('resume.pdf')}>
                                                 <FaFilePdf />
                                                 <div className="pdf-ico">
                                                     <FaDownload />

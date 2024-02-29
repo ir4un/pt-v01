@@ -6,6 +6,13 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+body,
+main,
+div {
+    margin: 0;
+    padding: 0;
+}
+
 textarea,
 button {
     font-family: inherit;

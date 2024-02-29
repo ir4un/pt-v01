@@ -1,7 +1,9 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import './App.css'
 import { useEffect, useState } from 'react';
+import { ToastContainer } from 'react-toastify';
+import { Helmet } from 'react-helmet';
+import './App.css'
 import Intro from './components/Intro';
 import Edu from './components/Edu';
 import Divider from './components/Divider';
@@ -12,7 +14,7 @@ import Project from './components/Project';
 import Contact from './components/Contact';
 import Activities from './components/Activities';
 import Footer from './components/Footer';
-import { ToastContainer } from 'react-toastify';
+
 
 
 // TODO remove, this demo shouldn't need to reset the theme.
@@ -37,46 +39,51 @@ function App() {
   }, []);
 
   return (
-    <>
-      <div>
-        {loading ? (
-          // Show the preloader when loading is true
-          <div className="preloader">
-            <div className="line-left"></div>
-            <div className="line-right"></div>
-          </div>
-        ) : (
-          <div></div>
-        )}
-        <ThemeProvider theme={defaultTheme}>
-          <CssBaseline />
-          <main>
-            {/* Hero unit */}
-            <Intro />
-            <Divider />
-            <About />
-            <Edu />
-            <Exp />
-            <Stack />
-            <Project />
-            <Activities />
-            <Contact />
-            <Footer />
-          </main>
-        </ThemeProvider>
-        <ToastContainer
-          position="bottom-center"
-          autoClose={2000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="colored" />
-      </div>
-    </>
+    <div>
+      <Helmet>
+        <title>Irfan Zafri Portfolio Website</title>
+        <meta property="og:title" content="Irfan Zafri" />
+        <meta property="og:description" content="I'm Irfan Zafri and Welcome to My Portfolio Website 😎" />
+        <meta property="og:image" content="https://imgur.com/a/LeCm5ll" />
+        <meta property="og:url" content="https://irfan-zafri.netlify.app/" />
+      </Helmet>
+      {loading ? (
+        // Show the preloader when loading is true
+        <div className="preloader">
+          <div className="line-left"></div>
+          <div className="line-right"></div>
+        </div>
+      ) : (
+        <div></div>
+      )}
+      <ThemeProvider theme={defaultTheme}>
+        <CssBaseline />
+        <main>
+          {/* Hero unit */}
+          <Intro />
+          <Divider />
+          <About />
+          <Edu />
+          <Exp />
+          <Stack />
+          <Project />
+          <Activities />
+          <Contact />
+          <Footer />
+        </main>
+      </ThemeProvider>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored" />
+    </div>
   )
 }
 

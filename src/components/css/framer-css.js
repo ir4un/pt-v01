@@ -73,11 +73,13 @@ export const socialbtnMotion = {
     },
     PDFtapEffect: {
         backgroundColor: '#470400',
-        transition: { duration: 0.2 }
+        transition: { duration: 0.2 },
+        cursor: 'pointer'
     },
     PDFhoverEffect: {
         backgroundColor: '#7a0700',
-        transition: { duration: 0.2 }
+        transition: { duration: 0.2 },
+        cursor: 'pointer'
     }
 };
 
