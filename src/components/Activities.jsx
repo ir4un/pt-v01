@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid';
 import { motion, useInView, useAnimationControls } from "framer-motion";
 import { GiStarMedal } from "react-icons/gi";
 
-import Carousel from './carousel.jsx';
+import Carousel from '../components/Carousel.jsx';
 import { animlefttoright } from './css/framer-css.js';
 import { activityContent } from './content/activity-content.js';
 
@@ -26,9 +26,6 @@ function Activities() {
         setViewDesc(activityContent[newIndex].desc)
 
     };
-
-
-
 
     useEffect(() => {
         if (isInView) {
