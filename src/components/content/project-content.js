@@ -1,4 +1,4 @@
-import nodejsLogo from '../../assets/Images/nodejs.png';
+import nodejsLogo from '../../assets/images/nodejs.png';
 import htmlLogo from '../../assets/images/html.png';
 import cssLogo from '../../assets/images/css.png';
 import javaLogo from '../../assets/images/java.png';
