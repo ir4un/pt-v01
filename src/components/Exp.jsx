@@ -5,7 +5,7 @@ import { GiStarsStack } from "react-icons/gi";
 
 import { animlefttoright } from './css/framer-css.js';
 import fusionoffice from '../assets/images/fusionoffice.jpg';
-import reciteoffice from '../assets/images/test.jpg';
+import reciteoffice from '../assets/images/work2.jpg';
 import recitelogo from '../assets/images/reciteclearnoradius.png';
 import fusionlogoclear from '../assets/images/fusionexclear.png';
 import fusionlogo from '../assets/images/fusionex.jpg';
@@ -113,7 +113,7 @@ function Exp() {
                                 <motion.div className="folder-img" animate={imgControls}>
                                     <img src={reciteoffice} alt="Recite Lab" className='folder-thumbnail' />
                                     <div className="folder-img-caption-box">
-                                        <p>&quot;Recite Lab&apos;s Office 2023&quot;</p>
+                                        <p>&quot;Working at Recite Lab&apos;s Office 2021&quot;</p>
                                     </div>
                                 </motion.div>
                             </div>
@@ -122,7 +122,7 @@ function Exp() {
                                 <motion.div className="folder-img" animate={imgControls}>
                                     <img src={fusionoffice} alt="Fusionex" className='folder-thumbnail' />
                                     <div className="folder-img-caption-box">
-                                        <p>&quot;Fusionex Office 2023&quot;</p>
+                                        <p>&quot;Inside of Fusionex Office 2023&quot;</p>
                                     </div>
                                 </motion.div>
                             </div>

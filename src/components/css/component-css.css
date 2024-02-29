@@ -121,6 +121,7 @@
     transform: skewX(-4deg);
     opacity: 0.85;
     overflow: hidden;
+    user-select: none;
 }
 
 .intro-btn-big:hover {
@@ -145,6 +146,7 @@
     transform: skewX(-4deg);
     opacity: 0.85;
     overflow: hidden;
+    user-select: none;
 }
 
 .intro-btn-small {
@@ -166,6 +168,7 @@
     font-size: 35px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
+    user-select: none;
 }
 
 
@@ -226,6 +229,7 @@
     color: #fff;
     position: absolute;
     z-index: 999;
+    user-select: none;
 }
 
 .welcome-btn {
@@ -460,6 +464,10 @@
     align-items: center;
 }
 
+.about-content p {
+    cursor: default;
+}
+
 
 .player {
     width: 600px;
@@ -495,6 +503,7 @@
     align-items: center;
     border-radius: 5px;
     padding-left: 50px;
+    user-select: none;
 }
 
 .edu-selector:hover {
@@ -588,6 +597,7 @@
     text-align: center;
     height: auto;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    cursor: default;
 }
 
 .edu-overlay.hidden {
@@ -911,6 +921,7 @@
     border-radius: 6px 6px 0 0;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     z-index: 1;
+    user-select: none;
 }
 
 .tab-logo:hover {
