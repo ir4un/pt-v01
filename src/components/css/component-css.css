@@ -11,6 +11,7 @@
 
 .IntroMain {
     height: 600px;
+    position: relative;
 }
 
 .content {
@@ -2051,7 +2052,7 @@
 @media screen and (max-width: 1100px) {
 
     .intro-desc {
-        bottom: 355px;
+        bottom: 25px;
         left: 25px;
         margin-top: 0px;
         margin-left: 0px;
@@ -2072,7 +2073,7 @@
 
     .intro-desc {
         width: 100%;
-        bottom: 256px;
+        bottom: 0;
         position: absolute;
         background-color: #333333;
         margin-top: 0px;
