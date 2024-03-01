@@ -292,7 +292,7 @@ function Intro() {
                                                 variants={socialbtnMotion}
                                                 whileHover={"PDFhoverEffect"}
                                                 whileTap={"PDFtapEffect"}
-                                                onClick={() => downloadFile('resume.pdf')}>
+                                                onClick={() => downloadFile('2024-04-Resume.pdf')}>
                                                 <FaFilePdf />
                                                 <div className="pdf-ico">
                                                     <FaDownload />
