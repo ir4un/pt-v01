@@ -1140,6 +1140,7 @@
     font-size: 30px;
     text-align: center;
     padding: 25px;
+    user-select: none;
 }
 
 .project-grid-content>div {
@@ -1531,6 +1532,7 @@
     height: 100%;
     height: auto;
     gap: 10px;
+    cursor: default;
 }
 
 .carousel-thumbnail {

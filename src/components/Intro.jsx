@@ -90,7 +90,6 @@ function Intro() {
                                             to={'AboutSection'}
                                             smooth={true}
                                             spy={true}
-                                            offset={-300}
                                             duration={500} >
                                             <motion.div
                                                 className='intro-btn-big'
