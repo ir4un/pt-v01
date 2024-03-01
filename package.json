@@ -17,6 +17,7 @@
     "@mui/material": "^5.15.6",
     "axios": "^1.6.7",
     "framer-motion": "^11.0.5",
+    "prerender-node": "^3.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
