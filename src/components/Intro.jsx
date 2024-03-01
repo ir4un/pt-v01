@@ -24,7 +24,7 @@ function Intro() {
 
     function downloadFile(filename) {
         const anchor = document.createElement('a');
-        anchor.href = `/assets/${filename}`;
+        anchor.href = `../../public/${filename}`;
         anchor.download = filename;
         anchor.style.display = 'none';
         document.body.appendChild(anchor);
