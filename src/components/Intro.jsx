@@ -1,8 +1,12 @@
+import { useState, useEffect, useRef } from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import { motion } from "framer-motion";
 import { Link } from 'react-scroll';
+import Navbar from './Navbar';
+import { motion, useInView, useAnimationControls } from "framer-motion";
+import { useMediaQuery } from 'react-responsive';
+
 
 import { FaGithubSquare, FaFacebookSquare, FaLinkedin, FaTrophy, FaYoutube, FaDownload } from "react-icons/fa";
 import { FiChevronsRight } from "react-icons/fi";
@@ -16,11 +20,20 @@ import videoFile from '../assets/videos/animated-bliss.mp4';
 import pfpImg from '../assets/images/irfan-selfcleararm.png';
 import sanity from '../assets/images/sanity.webp';
 
-import { introButtonMotion, introBlueButtonMotion, socialbtnMotion } from './css/framer-css.js'; // Adjust the path as needed
+import { introButtonMotion, introBlueButtonMotion, socialbtnMotion, animtoptobottom, mobilenavbtnanim } from './css/framer-css.js'; // Adjust the path as needed
 import './css/component-css.css';
 
 
 function Intro() {
+
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: false });
+    const mainControls = useAnimationControls();
+    const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
+    const [scrollingUp, setScrollingUp] = useState(true);
+    const isMobile = useMediaQuery({ maxWidth: 900 });
+
+    const navbarVariant = isMobile ? mobilenavbtnanim : animtoptobottom;
 
     function downloadFile(filename) {
         const anchor = document.createElement('a');
@@ -32,8 +45,45 @@ function Intro() {
         document.body.removeChild(anchor);
     }
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPos = window.scrollY;
+            const isScrollingUp = currentScrollPos < prevScrollPos;
+
+            if (isScrollingUp !== scrollingUp && window.innerWidth > 600) {
+                setScrollingUp(isScrollingUp);
+                if (!isInView) {
+                    if (isScrollingUp) {
+                        mainControls.start("hidden");
+                    } else {
+                        mainControls.start("visible");
+                    }
+                }
+            }
+
+            setPrevScrollPos(currentScrollPos);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [prevScrollPos, scrollingUp, mainControls, isInView]);
+
+    useEffect(() => {
+        if (window.innerWidth > 600) {
+            if (isInView) {
+                mainControls.start("visible");
+            } else {
+                mainControls.start("hidden");
+            }
+        } else {
+            mainControls.start("hidden");
+        }
+
+    }, [isInView, mainControls]);
+
+
     return (
-        <div className='IntroMain'>
+        <div className='IntroMain' ref={ref} id="IntroSection">
             <div className="video-container">
                 <video
                     autoPlay
@@ -148,7 +198,7 @@ function Intro() {
                                         to={'EduSection'}
                                         smooth={true}
                                         spy={true}
-                                        offset={-200}
+                                        offset={-250}
                                         duration={500} >
                                         <motion.div
                                             className='intro-btn-small'
@@ -306,6 +356,15 @@ function Intro() {
                     </Grid>
                 </Container>
             </Box>
+            <motion.div
+                className='motion-navbar'
+                variants={navbarVariant}
+                initial={"hidden"}
+                animate={mainControls}
+                transition={{ duration: 0.5, delay: 0.1 }}
+            >
+                <Navbar />
+            </motion.div>
         </div>
     )
 }

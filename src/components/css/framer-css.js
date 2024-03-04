@@ -1,5 +1,22 @@
 // Intro Section Animations
 
+export const navbaropenbtnanim = {
+    initial: {
+        transition: { duration: 0.8, delay: 0.2 }
+    },
+    animate: {
+    },
+    tapEffect: {
+        backgroundColor: '#1b1b1b',
+        transition: { duration: 0.2 }
+    },
+    hoverEffect: {
+        backgroundColor: '#272727',
+        transition: { duration: 0.2 },
+        cursor: 'pointer'
+    }
+};
+
 export const introButtonMotion = {
     initial: {
         opacity: 0,
@@ -19,6 +36,27 @@ export const introButtonMotion = {
     }
 };
 
+export const navbarMotionbtn = {
+    initial: {
+        opacity: 0,
+        transition: { duration: 0.8, delay: 0.2 }
+    },
+    animate: {
+        opacity: 0.95,
+        transition: { duration: 0.8, delay: 1.7 }
+    },
+    tapEffect: {
+        backgroundColor: 'rgb(158, 158, 158)',
+        transition: { duration: 0.2 }
+    },
+    hoverEffect: {
+        backgroundColor: '#b2b2b2',
+        transition: { duration: 0.2 },
+        cursor: 'pointer'
+
+    }
+};
+
 export const introBlueButtonMotion = {
     initial: {
         opacity: 0,
@@ -35,6 +73,26 @@ export const introBlueButtonMotion = {
     hoverEffect: {
         backgroundColor: '#0682ab',
         transition: { duration: 0 }
+    }
+};
+
+export const navbarMotionBluebtn = {
+    initial: {
+        opacity: 0,
+        transition: { duration: 0.8, delay: 0.2 }
+    },
+    animate: {
+        opacity: 0.95,
+        transition: { duration: 0.8, delay: 1.7 }
+    },
+    tapEffect: {
+        backgroundColor: '#045b77',
+        transition: { duration: 0 }
+    },
+    hoverEffect: {
+        backgroundColor: '#0682ab',
+        transition: { duration: 0 },
+        cursor: 'pointer'
     }
 };
 
@@ -154,6 +212,33 @@ export const contactSend = {
         cursor: 'pointer'
     }
 };
+
+export const animtoptobottom = {
+    hidden: {
+        opacity: 1, y: 0,
+        transition: { duration: 0.2 }
+    },
+    visible: {
+        opacity: 0, y: -75,
+        transition: { duration: 0.2 }
+
+    }
+};
+
+export const mobilenavbtnanim = {
+    hidden: {
+        opacity: 1,
+        transition: { duration: 0.2 }
+
+    },
+    visible: {
+        opacity: 0,
+        transition: { duration: 0.2 }
+
+
+    }
+};
+
 
 export const animrighttoleft = {
     hidden: {
