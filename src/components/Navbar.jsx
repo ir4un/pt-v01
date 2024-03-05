@@ -48,11 +48,11 @@ function Navbar() {
     useEffect(() => {
         if (window.innerWidth < 901) {
             btnControl.start({
-                // opacity: [0, 1],
+                opacity: [0, 1],
             });
         }
 
-    }, [btnControl, isDisplay]);
+    }, [btnControl]);
     return (
         <div className="main-nav">
             <motion.div

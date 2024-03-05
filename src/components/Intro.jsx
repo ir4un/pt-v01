@@ -75,6 +75,7 @@ function Intro() {
             } else {
                 mainControls.start("hidden");
             }
+
         } else {
             mainControls.start("hidden");
         }
@@ -361,8 +362,7 @@ function Intro() {
                 variants={navbarVariant}
                 initial={"hidden"}
                 animate={mainControls}
-                transition={{ duration: 0.5, delay: 0.1 }}
-            >
+                transition={{ duration: 0.5, delay: 0.1 }}>
                 <Navbar />
             </motion.div>
         </div>

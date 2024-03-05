@@ -1769,19 +1769,21 @@
 .navbar-btn-blue .intro-btn-ico.stack {
     right: auto;
     top: -12px;
+    z-index: 0;
 }
 
 .navbar-btn-blue .intro-btn-ico.project {
     left: auto;
     top: -5px;
     right: auto;
+    z-index: 0;
 }
 
 .navbar-btn-blue .intro-btn-ico.activity {
-
     left: auto;
     top: -5px;
     right: auto;
+    z-index: 0;
 }
 
 .navbar-btn .intro-btn-ico.hobby {

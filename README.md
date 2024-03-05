@@ -23,6 +23,9 @@ Youtube-
 6. Sending Emails from React App with EmailJS | Step-by-Step Tutorial - https://youtu.be/wWiTouBHibs?si=5hgHlVj2ghBfUnB_
 
 7. How to rename a folder inside GitHub without forking it to the local system || Easiest approach 💯- https://www.youtube.com/watch?v=quqHLtxNHCI
+8. 
+9. Html5 CSS3 Cube Shape - Cube inside a Transparent Cube - Pure CSS Shape Tutorial
+- https://www.youtube.com/watch?v=H2D51Ql8Kco
 
 
 React Components:
