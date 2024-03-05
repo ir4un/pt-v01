@@ -2,6 +2,9 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useEffect, useState } from 'react';
 import { ToastContainer } from 'react-toastify';
+import { motion } from "framer-motion";
+
+
 import './App.css'
 import Intro from './components/Intro';
 import Edu from './components/Edu';
@@ -37,6 +40,23 @@ function App() {
     <div>
       {loading ? (
         <div className="preloader">
+          <div className="star-container"></div>
+          <div id="stars-v2"></div>
+          <div id="stars2-v2"></div>
+          <div id="stars3-v2"></div>
+          <motion.div
+            className='load-container'>
+            <div className="load-message">
+              <p>#</p><h1>4</h1>
+            </div>
+          </motion.div>
+          <div className="cube-container">
+            <div className="cube">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
           <div className="line-left"></div>
           <div className="line-right"></div>
         </div>
