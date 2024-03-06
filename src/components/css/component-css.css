@@ -1006,7 +1006,7 @@
     display: flex;
     justify-content: end;
     align-items: center;
-    z-index: 999;
+    z-index: -1;
 }
 
 .stack-list-background {
@@ -2223,16 +2223,6 @@
         margin-top: 0;
         margin-left: 0;
     }
-
-    .motion-navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 9999;
-        width: 100vw;
-        overflow: hidden;
-    }
-
 
     .navbar-container {
         display: none;

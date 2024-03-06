@@ -50,7 +50,7 @@ function Intro() {
             const currentScrollPos = window.scrollY;
             const isScrollingUp = currentScrollPos < prevScrollPos;
 
-            if (isScrollingUp !== scrollingUp && window.innerWidth > 600) {
+            if (isScrollingUp !== scrollingUp) {
                 setScrollingUp(isScrollingUp);
                 if (!isInView) {
                     if (isScrollingUp) {
@@ -69,7 +69,7 @@ function Intro() {
     }, [prevScrollPos, scrollingUp, mainControls, isInView]);
 
     useEffect(() => {
-        if (window.innerWidth > 600) {
+        if (window.innerWidth > 900) {
             if (isInView) {
                 mainControls.start("visible");
             } else {

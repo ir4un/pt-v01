@@ -2,7 +2,7 @@
 
 export const navbaropenbtnanim = {
     initial: {
-        transition: { duration: 0.8, delay: 0.2 }
+        transition: { duration: 0.2, delay: 0.2 }
     },
     animate: {
     },
@@ -14,6 +14,15 @@ export const navbaropenbtnanim = {
         backgroundColor: '#272727',
         transition: { duration: 0.2 },
         cursor: 'pointer'
+    },
+    hidden: {
+        opacity: 1, y: 0,
+        transition: { duration: 0.1 }
+    },
+    visible: {
+        opacity: 1, y: 95,
+        transition: { duration: 0.1 }
+
     }
 };
 
@@ -232,7 +241,7 @@ export const mobilenavbtnanim = {
 
     },
     visible: {
-        opacity: 0,
+        opacity: 1,
         transition: { duration: 0.2 }
 
 

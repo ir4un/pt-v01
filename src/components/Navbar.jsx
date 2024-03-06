@@ -21,7 +21,7 @@ function Navbar() {
     const btnControl = useAnimationControls();
     const imgControls = useAnimationControls();
     const [isDisplay, setIsDisplay] = useState(false);
-
+    const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
     const toggleClass = () => {
         setIsDisplay(!isDisplay);
 
@@ -34,6 +34,32 @@ function Navbar() {
         }
 
     };
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 901 && isDisplay) {
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPos = window.scrollY;
+            const isScrollingUp = currentScrollPos < prevScrollPos;
+
+            if (window.innerWidth > 300) {
+                if (isScrollingUp) {
+                    btnControl.start("hidden");
+                } else {
+                    btnControl.start("visible");
+                }
+            }
+
+            setPrevScrollPos(currentScrollPos);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [prevScrollPos, btnControl]);
 
     useEffect(() => {
         if (window.innerWidth < 901) {
