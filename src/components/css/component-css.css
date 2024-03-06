@@ -538,7 +538,7 @@
     background-color: #262626;
     border: 2px solid #ffffff;
     box-sizing: border-box;
-    z-index: 99;
+    z-index: 0;
 }
 
 .edu-selector p::before {
@@ -574,7 +574,7 @@
     background-color: #262626;
     border: 2px solid #ffffff;
     box-sizing: border-box;
-    z-index: 999;
+    z-index: 1;
 }
 
 .edu-selector.shape2::before {
@@ -586,7 +586,7 @@
     background-color: #262626;
     border: 2px solid #ffffff;
     box-sizing: border-box;
-    z-index: 999;
+    z-index: 1;
 }
 
 .edu-details {
@@ -1166,7 +1166,7 @@
 .project-name {
     position: relative;
     font-size: 25px;
-    z-index: 999;
+    z-index: 1;
 }
 
 .project-name::after {

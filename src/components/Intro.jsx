@@ -68,6 +68,12 @@ function Intro() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [prevScrollPos, scrollingUp, mainControls, isInView]);
 
+    window.addEventListener('resize', () => {
+        if (window.innerWidth <= 900) {
+            mainControls.start("hidden");
+        }
+    });
+
     useEffect(() => {
         if (window.innerWidth > 900) {
             if (isInView) {
@@ -77,7 +83,7 @@ function Intro() {
             }
 
         } else {
-            mainControls.start("hidden");
+            mainControls.start("visible");
         }
 
     }, [isInView, mainControls]);

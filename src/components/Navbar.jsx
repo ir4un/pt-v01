@@ -37,9 +37,11 @@ function Navbar() {
 
     };
 
+    // Deal with when user switch from mobile to desktop while mobilenav is displaying
     window.addEventListener('resize', () => {
-        if (window.innerWidth >= 901 && isDisplay) {
+        if (window.innerWidth >= 900 && isDisplay) {
             document.body.style.overflow = 'auto';
+            setIsDisplay(false);
         }
     });
 
