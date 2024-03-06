@@ -5,6 +5,8 @@ export const navbaropenbtnanim = {
         transition: { duration: 0.2, delay: 0.2 }
     },
     animate: {
+        transition: { duration: 0.2, delay: 0.01 }
+
     },
     tapEffect: {
         backgroundColor: '#1b1b1b',
@@ -17,12 +19,9 @@ export const navbaropenbtnanim = {
     },
     hidden: {
         opacity: 1, y: 0,
-        transition: { duration: 0.1 }
     },
     visible: {
         opacity: 1, y: 95,
-        transition: { duration: 0.1 }
-
     }
 };
 

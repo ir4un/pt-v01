@@ -2244,6 +2244,7 @@
 
     .navbar-container>* {
         flex: 0 0;
+        width: 90vw;
         /* Prevent items from growing and shrinking */
     }
 
@@ -2282,7 +2283,8 @@
     }
 
     .navbar-btn .intro-btn-ico.welcome {
-        right: 0;
+        left: auto;
+        right: -30px;
     }
 
     .navbar-btn .intro-btn-ico.edu {

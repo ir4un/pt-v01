@@ -22,6 +22,8 @@ function Navbar() {
     const imgControls = useAnimationControls();
     const [isDisplay, setIsDisplay] = useState(false);
     const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
+    const [scrollingUp, setScrollingUp] = useState(true);
+
     const toggleClass = () => {
         setIsDisplay(!isDisplay);
 
@@ -46,7 +48,8 @@ function Navbar() {
             const currentScrollPos = window.scrollY;
             const isScrollingUp = currentScrollPos < prevScrollPos;
 
-            if (window.innerWidth > 300) {
+            if (isScrollingUp !== scrollingUp) {
+                setScrollingUp(isScrollingUp);
                 if (isScrollingUp) {
                     btnControl.start("hidden");
                 } else {
@@ -59,7 +62,8 @@ function Navbar() {
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [prevScrollPos, btnControl]);
+    }, [prevScrollPos, scrollingUp, btnControl,]);
+
 
     useEffect(() => {
         if (window.innerWidth < 901) {
