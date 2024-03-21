@@ -21,7 +21,7 @@ import pfpImg from '../assets/images/irfan-selfcleararm.png';
 import sanity from '../assets/images/sanity.webp';
 
 import { introButtonMotion, introBlueButtonMotion, socialbtnMotion, animtoptobottom, mobilenavbtnanim } from './css/framer-css.js'; // Adjust the path as needed
-import './css/component-css.css';
+import './css/component-css.scss';
 
 
 function Intro() {
@@ -78,8 +78,6 @@ function Intro() {
         if (window.innerWidth > 900) {
             if (isInView) {
                 mainControls.start("visible");
-            } else {
-                mainControls.start("hidden");
             }
 
         } else {
@@ -349,7 +347,7 @@ function Intro() {
                                                 variants={socialbtnMotion}
                                                 whileHover={"PDFhoverEffect"}
                                                 whileTap={"PDFtapEffect"}
-                                                onClick={() => downloadFile('2024-04-Resume.pdf')}>
+                                                onClick={() => downloadFile('2024-04-Resumev4.pdf')}>
                                                 <FaFilePdf />
                                                 <div className="pdf-ico">
                                                     <FaDownload />

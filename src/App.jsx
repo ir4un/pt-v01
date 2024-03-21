@@ -5,7 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import { motion } from "framer-motion";
 
 
-import './App.css'
+import './App.scss'
 import Intro from './components/Intro';
 import Edu from './components/Edu';
 import Divider from './components/Divider';

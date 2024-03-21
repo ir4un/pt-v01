@@ -13,7 +13,7 @@ import { FaHome } from "react-icons/fa";
 import sanity from '../assets/images/sanity.webp';
 
 import { navbarMotionbtn, navbarMotionBluebtn, navbaropenbtnanim } from './css/framer-css.js'; // Adjust the path as needed
-import './css/component-css.css';
+import './css/component-css.scss';
 
 
 function Navbar() {

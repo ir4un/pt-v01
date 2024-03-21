@@ -1,4 +1,4 @@
-/* Add this CSS to your stylesheets */
+$yellow: #ff0;
 
 body {
     margin: 0;
@@ -36,7 +36,7 @@ button {
     position: absolute;
     height: 2px;
     width: 0%;
-    background-color: yellow;
+    background-color: $yellow; // Use variable
     animation: lineAnimationleft 2s ease-out forwards;
     z-index: 9999;
 }
@@ -45,7 +45,7 @@ button {
     position: absolute;
     height: 2px;
     width: 0%;
-    background-color: yellow;
+    background-color: $yellow; // Use variable
     animation: lineAnimationright 2s ease-out forwards;
     z-index: 9999;
 }
@@ -55,7 +55,6 @@ button {
     animation: rotateCube 30s linear infinite;
     opacity: 0.5;
 }
-
 
 .cube {
     position: absolute;
@@ -67,8 +66,6 @@ button {
     transform: translate(-100%, -100%);
     z-index: 9998;
 }
-
-
 
 .cube span {
     position: absolute;
@@ -82,21 +79,21 @@ button {
 .cube span:nth-child(1) {
     left: 50%;
     transform: rotate(-45deg) skew(15deg, 15deg);
-    border: solid 2px #ff0;
+    border: solid 2px $yellow; // Use variable
 }
 
 .cube span:nth-child(2) {
     top: 155px;
     left: 10px;
     transform: rotate(15deg) skew(15deg, 15deg);
-    border: solid 2px #ff0;
+    border: solid 2px $yellow; // Use variable
 }
 
 .cube span:nth-child(3) {
     top: 155px;
     left: 189px;
     transform: rotate(-15deg) skew(-15deg, -15deg);
-    border: solid 2px #ff0;
+    border: solid 2px $yellow; // Use variable
 }
 
 .load-container {

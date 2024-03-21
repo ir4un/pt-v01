@@ -1,12 +1,14 @@
+// Define variables
 :root {
     --carousel-height: 450px;
     --current-slide: 0;
     --slide-width: 25vw;
 }
 
-#message {
-    font-family: "Poppins", sans-serif !;
 
+// Rest of the SCSS code
+#message {
+    font-family: "Poppins", sans-serif;
 }
 
 .IntroMain {
@@ -42,46 +44,51 @@
     overflow: visible;
     text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3),
         0px -4px 10px rgba(255, 255, 255, 0.3);
-}
 
-.title {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+    .title {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 
-.title-ico {
-    position: absolute;
-    right: 0;
-}
+    .title-ico {
+        position: absolute;
+        right: 0;
+    }
 
-.title-ico.smile {
-    top: 58px;
-    font-size: 110px;
-}
+    @mixin title-ico($top, $fontSize: 16px) {
+        position: absolute;
+        top: $top;
+        font-size: $fontSize;
+    }
 
-.title-ico.edu {
-    top: 30px;
-}
+    .title-ico.smile {
+        @include title-ico(58px, 110px);
+    }
 
-.title-ico.exp {
-    top: 40px;
-}
+    .title-ico.edu {
+        @include title-ico(30px);
+    }
 
-.title-ico.stack {
-    top: 45px;
-}
+    .title-ico.exp {
+        @include title-ico(40px);
+    }
 
-.title-ico.project {
-    top: 45px;
-}
+    .title-ico.stack {
+        @include title-ico(45px);
+    }
 
-.title-ico.activity {
-    top: 45px;
-}
+    .title-ico.project {
+        @include title-ico(45px);
+    }
 
-.title-ico.contact {
-    top: 45px;
+    .title-ico.activity {
+        @include title-ico(45px);
+    }
+
+    .title-ico.contact {
+        @include title-ico(45px);
+    }
 }
 
 /* Intro Section    */
@@ -1861,10 +1868,6 @@
 
     }
 
-    .title {
-        left: 50%;
-        transform: translateX(-50%);
-    }
 
     .title-ico {
         display: none;
@@ -1872,6 +1875,11 @@
 
     .section-title {
         font-size: 35px;
+
+        .title {
+            left: 50%;
+            transform: translateX(-50%);
+        }
     }
 
     /* About Section*/

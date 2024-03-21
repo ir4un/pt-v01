@@ -3,7 +3,7 @@ import amiya from '../assets/images/amiyahold.png';
 import lolidance from '../assets/images/lolidance.gif';
 import gupgif from '../assets/images/gupgif.gif';
 import catto1 from '../assets/images/catto1.gif';
-import './css/component-css.css';
+import './css/component-css.scss';
 
 function Footer() {
     return (

@@ -23,9 +23,11 @@ Youtube-
 6. Sending Emails from React App with EmailJS | Step-by-Step Tutorial - https://youtu.be/wWiTouBHibs?si=5hgHlVj2ghBfUnB_
 
 7. How to rename a folder inside GitHub without forking it to the local system || Easiest approach 💯- https://www.youtube.com/watch?v=quqHLtxNHCI
-8. 
-9. Html5 CSS3 Cube Shape - Cube inside a Transparent Cube - Pure CSS Shape Tutorial
-- https://www.youtube.com/watch?v=H2D51Ql8Kco
+   
+8. Html5 CSS3 Cube Shape - Cube inside a Transparent Cube - Pure CSS Shape Tutorial - https://www.youtube.com/watch?v=H2D51Ql8Kco
+
+9. Setup a Custom Domain in Netlify in 5 Minutes - https://www.youtube.com/watch?v=bY7Tkh9Vz8I 
+   
 
 
 React Components:
@@ -34,7 +36,7 @@ React Components:
 2. Angled Button - https://codemyui.com/pure-css-cartoon-style-angled-button/
 
 
-Resources:
+Misc Resources:
 1. Bliss Animated Wallpaper - https://moewalls.com/landscape/bliss-windows-xp-live-wallpaper/
 
 2. React Icons - https://react-icons.github.io/react-icons/
@@ -42,3 +44,7 @@ Resources:
 3. Gradient Generator - https://cssgradient.io/
 
 4. MUI Templates - https://mui.com/material-ui/getting-started/templates/
+
+5. Space Animation - https://www.codewithrandom.com/2023/11/21/css-star-animation/
+
+6. Beautiful CSS 3D Transform Examples - https://polypane.app/css-3d-transform-examples/
