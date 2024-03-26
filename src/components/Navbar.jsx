@@ -16,7 +16,7 @@ import sanity from '../assets/images/sanity.webp';
 
 import { navbarMotionbtn, navbarMotionBluebtn, navbaropenbtnanim } from './css/framer-css.js'; // Adjust the path as needed
 import './css/component-css.scss';
-import Music from './music.jsx';
+import Music from './Music.jsx';
 
 
 function Navbar() {
