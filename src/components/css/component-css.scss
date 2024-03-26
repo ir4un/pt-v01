@@ -5,6 +5,38 @@
     --slide-width: 25vw;
 }
 
+// Music Stuff
+.audio-btn {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    width: 75px;
+    background-color: #323232;
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: solid 1px #fff;
+    overflow: hidden;
+    color: #fff;
+}
+
+.music-content {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    z-index: 99999;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
+}
+
+.music-panel {}
 
 // Rest of the SCSS code
 #message {
@@ -67,27 +99,32 @@
     }
 
     .title-ico.edu {
-        @include title-ico(30px);
+        @include title-ico(30px, 135px);
     }
 
     .title-ico.exp {
-        @include title-ico(40px);
+        @include title-ico(40px,
+            135px);
     }
 
     .title-ico.stack {
-        @include title-ico(45px);
+        @include title-ico(45px,
+            135px);
     }
 
     .title-ico.project {
-        @include title-ico(45px);
+        @include title-ico(45px,
+            135px);
     }
 
     .title-ico.activity {
-        @include title-ico(45px);
+        @include title-ico(45px,
+            135px);
     }
 
     .title-ico.contact {
-        @include title-ico(45px);
+        @include title-ico(45px,
+            135px);
     }
 }
 
@@ -2281,6 +2318,10 @@
         border: solid 1px #fff;
         overflow: hidden;
         user-select: none;
+
+        &.audio {
+            left: 105px
+        }
     }
 
     .mobile-nav-ico {

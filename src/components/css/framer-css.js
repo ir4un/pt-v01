@@ -273,3 +273,26 @@ export const animbottomtotop = {
         opacity: 1, y: 0
     }
 };
+
+export const musicbtn = {
+    initial: {
+        transition: { duration: 0.2, delay: 0.2 }
+    },
+    animate: {
+        transition: { duration: 0.2, delay: 0.01 }
+
+    },
+    tapEffect: {
+        transition: { duration: 0.2 }
+    },
+    hoverEffect: {
+        transition: { duration: 0.2 },
+        cursor: 'pointer'
+    },
+    hidden: {
+        opacity: 1, y: 0,
+    },
+    visible: {
+        opacity: 1, y: 95,
+    }
+};

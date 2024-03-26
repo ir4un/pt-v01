@@ -9,11 +9,14 @@ import { IoGameController } from "react-icons/io5";
 import { FaCubes } from "react-icons/fa6";
 import { MdWifiCalling3 } from "react-icons/md";
 import { FaHome } from "react-icons/fa";
+import { RxCross2 } from "react-icons/rx";
+import { FaMusic } from "react-icons/fa";
 
 import sanity from '../assets/images/sanity.webp';
 
 import { navbarMotionbtn, navbarMotionBluebtn, navbaropenbtnanim } from './css/framer-css.js'; // Adjust the path as needed
 import './css/component-css.scss';
+import Music from './music.jsx';
 
 
 function Navbar() {
@@ -21,6 +24,7 @@ function Navbar() {
     const btnControl = useAnimationControls();
     const imgControls = useAnimationControls();
     const [isDisplay, setIsDisplay] = useState(false);
+    const [isMusicDisplay, setIsMusicDisplay] = useState(false);
     const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
     const [scrollingUp, setScrollingUp] = useState(true);
 
@@ -95,9 +99,25 @@ function Navbar() {
                 whileTap={"tapEffect"}
                 onClick={toggleClass}>
                 <div className="mobile-nav-ico">
-                    <FaHome />
+                    {isDisplay ? <RxCross2 /> : <FaHome />}
                 </div>
             </motion.div>
+            <motion.div
+                className='audio-btn'
+                variants={navbaropenbtnanim}
+                animate={btnControl}
+                whileHover={"hoverEffect"}
+                whileTap={"tapEffect"}
+                onClick={toggleClass}>
+                <div className="mobile-nav-ico">
+                    <FaMusic />
+                </div>
+            </motion.div>
+            {isMusicDisplay ? (
+                <Music />
+            ) : (
+                <div></div>
+            )}
             <motion.div className={`navbar-container ${isDisplay ? 'display' : ''}`}
                 onClick={toggleClass}>
                 <Link
