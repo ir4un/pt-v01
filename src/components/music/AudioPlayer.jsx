@@ -34,7 +34,7 @@ function formatTime(seconds) {
     return date.toISOString().substr(11, 8);
 
 }
-export default function AudioPlayer({ display }) {
+export default function AudioPlayer({ display, autoplayTriggered }) {
     const mainControls = useAnimationControls();
     const btnControls = useAnimationControls();
     const waveformRef = useRef(null);
@@ -58,20 +58,30 @@ export default function AudioPlayer({ display }) {
             setDuration(wavesurfer.current.getDuration());
             setAudioFileName(audioFile.split('/').pop());
 
-            wavesurfer.current.play();
-        })
+            // Don't play the audio initially, wait for autoplayTriggered to change
+        });
 
         wavesurfer.current.on('audioprocess', () => {
             setCurrentTime(wavesurfer.current.getCurrentTime());
         });
 
         return () => {
-            wavesurfer.current.un('audioprocess');
-            wavesurfer.current.un('ready');
-            wavesurfer.current.destroy();
-        }
-
+            if (wavesurfer.current) { // Check if wavesurfer.current is defined
+                wavesurfer.current.un('audioprocess');
+                wavesurfer.current.un('ready');
+                wavesurfer.current.destroy();
+            }
+        };
     }, []);
+
+    // Use another useEffect to handle playing when autoplayTriggered changes
+    useEffect(() => {
+        if (autoplayTriggered && wavesurfer.current) {
+            wavesurfer.current.play();
+            setPlaying(true); // Set playing state to true
+        }
+    }, [autoplayTriggered]); // Add autoplayTriggered to dependency array
+
 
 
     useEffect(() => {
