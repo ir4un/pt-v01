@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -15,12 +16,16 @@ import { HiMiniSquare3Stack3D } from "react-icons/hi2";
 import { IoGameController } from "react-icons/io5";
 import { FaCubes, FaFilePdf } from "react-icons/fa6";
 import { MdWifiCalling3 } from "react-icons/md";
+import { FaMusic } from "react-icons/fa";
+import { RxCross2 } from "react-icons/rx";
 
+import { navbaropenbtnanim } from './css/framer-css.js';
 import videoFile from '../assets/videos/animated-bliss.mp4';
 import pfpImg from '../assets/images/irfan-selfcleararm.png';
 import sanity from '../assets/images/sanity.webp';
 
-import { introButtonMotion, introBlueButtonMotion, socialbtnMotion, animtoptobottom, mobilenavbtnanim } from './css/framer-css.js'; // Adjust the path as needed
+import { introButtonMotion, introBlueButtonMotion, socialbtnMotion, animtoptobottom, mobilenavbtnanim } from './css/framer-css.js';
+import AudioPlayer from './music/AudioPlayer.jsx';
 import './css/component-css.scss';
 
 
@@ -29,8 +34,12 @@ function Intro() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: false });
     const mainControls = useAnimationControls();
+    const btnControl = useAnimationControls();
     const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
     const [scrollingUp, setScrollingUp] = useState(true);
+    const [isMusicDisplay, setIsMusicDisplay] = useState(false);
+    const [autoplayTriggered, setAutoplayTriggered] = useState(false);
+
     const isMobile = useMediaQuery({ maxWidth: 900 });
 
     const navbarVariant = isMobile ? mobilenavbtnanim : animtoptobottom;
@@ -45,6 +54,21 @@ function Intro() {
         document.body.removeChild(anchor);
     }
 
+    const handleAutoplay = () => {
+        if (!autoplayTriggered) {
+            setAutoplayTriggered(true); // Update state to indicate autoplay triggered
+        }
+    };
+
+    const toggleMusicMenu = () => {
+        setIsMusicDisplay(!isMusicDisplay);
+        if (!isMusicDisplay) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    };
+
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollPos = window.scrollY;
@@ -57,7 +81,14 @@ function Intro() {
                         mainControls.start("hidden");
                     } else {
                         mainControls.start("visible");
+
                     }
+                }
+                if (isScrollingUp) {
+                    btnControl.start("hidden");
+                } else {
+                    btnControl.start("visible");
+
                 }
             }
 
@@ -66,7 +97,7 @@ function Intro() {
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [prevScrollPos, scrollingUp, mainControls, isInView]);
+    }, [prevScrollPos, scrollingUp, mainControls, btnControl, isInView]);
 
     window.addEventListener('resize', () => {
         if (window.innerWidth <= 900) {
@@ -369,8 +400,29 @@ function Intro() {
                 transition={{ duration: 0.5, delay: 0.1 }}>
                 <Navbar />
             </motion.div>
+            <motion.div
+                className={`audio-btn ${isMusicDisplay ? 'hidden' : ''}`}
+                variants={navbaropenbtnanim}
+                animate={btnControl}
+                whileHover={"hoverEffect"}
+                whileTap={"tapEffect"}
+                onClick={() => {
+                    toggleMusicMenu();
+                    handleAutoplay();
+                }}>
+                <div className="mobile-nav-ico">
+                    {isMusicDisplay ? <RxCross2 /> : <FaMusic />}
+                </div>
+            </motion.div>
+            <AudioPlayer display={isMusicDisplay} autoplayTriggered={autoplayTriggered} />
         </div>
     )
 }
+
+AudioPlayer.propTypes = {
+    display: PropTypes.bool.isRequired,
+    audioFile: PropTypes.string.isRequired,
+
+};
 
 export default Intro

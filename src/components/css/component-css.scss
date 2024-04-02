@@ -22,23 +22,85 @@
     border: solid 1px #fff;
     overflow: hidden;
     color: #fff;
+    z-index: 9998;
+
+    &.hidden {
+        right: 30px;
+    }
 }
 
 .music-content {
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    z-index: 99999;
+    z-index: 9997;
     background-color: rgba(0, 0, 0, 0.75);
     color: #fff;
+    top: 0;
+
+    &.hidden {
+        display: none;
+    }
 }
 
-.music-panel {}
+#waveform {
+    width: 100%;
+    max-width: 100%;
+}
 
-// Rest of the SCSS code
+.control-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls {
+    margin-top: 10px;
+}
+
+.controls button {
+    margin: 1px;
+    border: 1px solid #ccc !important;
+}
+
+.controls button:hover {
+    background-color: #ececec;
+}
+
+.audio-info {
+    margin-top: 15px;
+    color: #fff;
+    border-radius: 4px;
+    padding: 8px 15px;
+    display: inline-block;
+    font-size: 12px;
+
+}
+
+.song-thumb {
+    width: 275px;
+    height: 275px;
+}
+
+.anim-container {
+    overflow: hidden;
+}
+
+.song-btn {
+    width: 34px;
+}
+
+.mobile-nav-ico {
+    color: #fff;
+    font-size: 30px;
+    width: 30px;
+    height: 35px;
+}
+
 #message {
     font-family: "Poppins", sans-serif;
 }
@@ -508,7 +570,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    z-index: -1;
+    z-index: 0;
 }
 
 .about-content p {
@@ -2324,13 +2386,6 @@
         }
     }
 
-    .mobile-nav-ico {
-        color: #fff;
-        font-size: 30px;
-        width: 30px;
-        height: 35px;
-    }
-
     .navbar-btn .intro-btn-ico.welcome {
         left: auto;
         right: -30px;
@@ -2377,6 +2432,13 @@
 
 @media screen and (max-width: 600px) {
 
+    // Music Stuff
+    .audio-btn {
+        &.hidden {
+            right: 15px;
+        }
+    }
+
     /* Intro Section*/
 
     .IntroMain {
@@ -2392,7 +2454,6 @@
         left: -18px;
         background-color: #333333;
         margin: 0;
-
         z-index: -1;
     }
 

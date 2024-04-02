@@ -296,3 +296,15 @@ export const musicbtn = {
         opacity: 1, y: 95,
     }
 };
+
+export const songtoptobottom = {
+    hidden: {
+        opacity: 1, y: 0,
+        transition: { duration: 0.2 }
+    },
+    visible: {
+        opacity: 0, y: -75,
+        transition: { duration: 0.2 }
+
+    }
+};

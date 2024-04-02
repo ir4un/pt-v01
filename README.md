@@ -27,6 +27,9 @@ Youtube-
 8. Html5 CSS3 Cube Shape - Cube inside a Transparent Cube - Pure CSS Shape Tutorial - https://www.youtube.com/watch?v=H2D51Ql8Kco
 
 9. Setup a Custom Domain in Netlify in 5 Minutes - https://www.youtube.com/watch?v=bY7Tkh9Vz8I 
+    
+10. Make React Audio Player with Controls & Waveform - https://www.youtube.com/watch?v=rT6GiYEIdGs
+
    
 
 

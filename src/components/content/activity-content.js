@@ -6,6 +6,10 @@ import github from '../../assets/images/activities/github.png';
 import utube from '../../assets/images/activities/youtube.png';
 import hungry from '../../assets/images/activities/hungry.png';
 import babg from '../../assets/images/activities/babg.png';
+import web from '../../assets/images/activities/web.png';
+import gp from '../../assets/images/activities/gp.png';
+import gpthumb from '../../assets/images/activities/gpthumb.png';
+
 
 import insight from '../../assets/images/project-thumbnails/insight.png';
 
@@ -47,8 +51,17 @@ export const activityContent = [
             { image: utube, url: 'https://youtu.be/Uhgf-dCwqRg?si=HD-hHUfIc3cQEXtd' },
             { image: github, url: 'https://github.com/Sia-WRWD/Baby-Ghost-MelbHack' },
             { image: devpost, url: 'https://devpost.com/software/baby-ghost' }
-
-
+        ]
+    },
+    {
+        name: 'Green Space - FUSION UX 2022',
+        status: 'Silver Award Winner and Best Video Award',
+        desc: 'Green Space is a prototype of a mobile application that allows users to manage and monitor their plants using Internet of Things(IoT) devices installed within their hydroponic farm and plants at home. The app aims to make self-farming a much more easier experience with the remote technologies. Me and my team manage to win the Silver Award at FUSION UX 2022 and won the best video award by the jury. ',
+        thumbnail: gp,
+        thumbIcon: gpthumb,
+        link: [
+            { image: utube, url: 'https://youtu.be/bLhsY38DruE' },
+            { image: web, url: 'https://www.apu.edu.my/media/news/2737' }
         ]
     },
 
