@@ -20,16 +20,19 @@ function Contact() {
     const [message, setMessage] = useState('');
 
     const handleSubmit = (e) => {
+        // Send email with the details below
         e.preventDefault();
 
-        const serviceID = "service_rewv9dj";
-        const templateID = "template_nche9ns";
-        const publicKey = "1C4ZRg0R6AiMbcKLq";
+        const serviceID = import.meta.env.VITE_SERVICE_ID;
+        const templateID = import.meta.env.VITE_TEMPLATE_ID;
+        const publicKey = import.meta.env.VITE_PUBLIC_KEY;
+        const fromEmail = import.meta.env.VITE_FROM_EMAIL;
+        const toName = import.meta.env.VITE_TO_NAME;
 
         const templateParams = {
             from_name: name,
-            from_email: 'ir4un99@gmail.com',
-            to_name: "ir4un",
+            from_email: fromEmail,
+            to_name: toName,
             message: message
         };
 
@@ -56,6 +59,7 @@ function Contact() {
     };
 
     const copyNumber = (text) => {
+        // Stlying for the toast notification
         toast.success('Copied!', {
             position: "bottom-center",
             autoClose: 2000,

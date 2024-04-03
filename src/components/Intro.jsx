@@ -45,6 +45,7 @@ function Intro() {
     const navbarVariant = isMobile ? mobilenavbtnanim : animtoptobottom;
 
     function downloadFile(filename) {
+        // For resume download
         const anchor = document.createElement('a');
         anchor.href = `/${filename}`;
         anchor.download = filename;
@@ -55,12 +56,14 @@ function Intro() {
     }
 
     const handleAutoplay = () => {
+        // To autoplay music in AudioPlayer.jsx
         if (!autoplayTriggered) {
             setAutoplayTriggered(true); // Update state to indicate autoplay triggered
         }
     };
 
     const toggleMusicMenu = () => {
+        // Hide scrollbar when musi menu is displayed
         setIsMusicDisplay(!isMusicDisplay);
         if (!isMusicDisplay) {
             document.body.style.overflow = 'hidden';
@@ -70,11 +73,14 @@ function Intro() {
     };
 
     useEffect(() => {
+        // This may look complex, but its my method of dealing with user resizing browser while nav menu/intro section is still in view
         const handleScroll = () => {
+            // Checks if user is scrolling down or up
             const currentScrollPos = window.scrollY;
             const isScrollingUp = currentScrollPos < prevScrollPos;
 
             if (isScrollingUp !== scrollingUp) {
+                // This runs if user scrolls up
                 setScrollingUp(isScrollingUp);
                 if (!isInView) {
                     if (isScrollingUp) {
@@ -100,12 +106,14 @@ function Intro() {
     }, [prevScrollPos, scrollingUp, mainControls, btnControl, isInView]);
 
     window.addEventListener('resize', () => {
+        // Hide nav button when user resize window
         if (window.innerWidth <= 900) {
             mainControls.start("hidden");
         }
     });
 
     useEffect(() => {
+        // This is just to check if the intro section in still in view. If yes, the button will be hidden to avoid redundancy
         if (window.innerWidth > 900) {
             if (isInView) {
                 mainControls.start("visible");
@@ -421,8 +429,6 @@ function Intro() {
 
 AudioPlayer.propTypes = {
     display: PropTypes.bool.isRequired,
-    audioFile: PropTypes.string.isRequired,
-
 };
 
 export default Intro

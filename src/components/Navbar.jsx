@@ -18,7 +18,6 @@ import './css/component-css.scss';
 
 
 function Navbar() {
-
     const btnControl = useAnimationControls();
     const imgControls = useAnimationControls();
     const [isDisplay, setIsDisplay] = useState(false);
@@ -26,6 +25,7 @@ function Navbar() {
     const [scrollingUp, setScrollingUp] = useState(true);
 
     const toggleClass = () => {
+        // Same thing as in Intro.jsx, hides scrollbar when navbar menu is displayed
         setIsDisplay(!isDisplay);
 
         if (window.innerWidth < 901) {
@@ -49,6 +49,7 @@ function Navbar() {
     });
 
     useEffect(() => {
+        // Checks when user is scrolling up or down to either hide or display button
         const handleScroll = () => {
             const currentScrollPos = window.scrollY;
             const isScrollingUp = currentScrollPos < prevScrollPos;

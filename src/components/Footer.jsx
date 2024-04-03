@@ -7,6 +7,7 @@ import './css/component-css.scss';
 
 function Footer() {
     return (
+        // I will add more stuff soon
         <div className='section footer'>
             <div className='footerimg'>
                 <img src={blissv2} alt="Your Image" className='footer-bg' />

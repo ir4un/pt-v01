@@ -6,8 +6,6 @@ import { FaCubes } from "react-icons/fa6";
 
 import { projectButton, animlefttoright } from './css/framer-css.js';
 import { projectContent } from './content/project-content';
-// import example from '../assets/images/example.jpg';
-// import recitelogo from '../assets/images/reciteclearnoradius.png';
 
 function Project() {
 
@@ -21,6 +19,7 @@ function Project() {
     };
 
     const handleClick = () => {
+        // I tried to fix to issue of mobile users onClick doesnt trigger the Framer Motion animation
         if (clickType !== 'touch') {
             setClickType('mouse');
         }

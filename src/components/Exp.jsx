@@ -21,6 +21,7 @@ function Exp() {
 
     let name, date, position, desc, logo;
 
+    // Soon to be moved into seperate js file
     if (hiddenFolder === 'recite') {
         name = 'Fusionex';
         date = "Sept 2022 - Jan 2023";
@@ -36,7 +37,7 @@ function Exp() {
     }
 
     const toggleFolderVisibility = (selectedFolder) => {
-
+        // Currently the method to display and hide content is terribly inefficient, will make it more scalable for future content
         if (hiddenFolder != selectedFolder) {
             return;
         }
@@ -85,6 +86,7 @@ function Exp() {
                     <Grid item xs={0} sm={6} md={6}>
                     </Grid>
                     <Grid item xs={12} sm={6} md={6}>
+                        {/* This setup is only ideal for 2 items, for future content will need to rework */}
                         <div className="folder-tab">
                             <img src={recitelogo} alt="Recite lab Logo"
                                 className={`tab-logo ${hiddenFolder === 'recite' ? 'hidden' : ''}`}
@@ -107,6 +109,7 @@ function Exp() {
                         </div>
                     </Grid>
                     <Grid item xs={12} sm={6} md={6}>
+                        {/* Same issue as above, setup is only ideal for 2 items, for future content will need to rework */}
                         <div className="folder-area">
                             <div
                                 className={`folder recite ${hiddenFolder === 'recite' ? 'hidden' : ''}`}>

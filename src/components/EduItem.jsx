@@ -7,6 +7,7 @@ function EduItem({ selectedEducation, isRevealed }) {
 
   let title, logo, desc, result, date;
 
+  // I will move this content into a seperate js file, someday
   if (selectedEducation === 'SPM') {
     title = 'Sijil Pelajaran Malaysia';
     logo = smksilogo;
@@ -61,7 +62,7 @@ function EduItem({ selectedEducation, isRevealed }) {
 
 EduItem.propTypes = {
   selectedEducation: PropTypes.oneOf(['SPM', 'Diploma', 'Degree']).isRequired, // Define prop types
-  isRevealed: PropTypes.func.isRequired, // Add PropTypes validation
+  isRevealed: PropTypes.bool.isRequired, // Add PropTypes validation
 };
 
 export default EduItem;

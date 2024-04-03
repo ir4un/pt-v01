@@ -9,6 +9,7 @@ function Carousel({ children = [], height, updateActivityData }) {
     const [current, setCurrent] = useState(0);
 
     const goToSlide = useCallback(
+        // Responsible for slide navigation
         (index) => {
             let newIndex = index;
 
@@ -34,6 +35,7 @@ function Carousel({ children = [], height, updateActivityData }) {
         <div
             className="carousel"
             style={height && { "--carousel-height": `${height}px` }}>
+            {/* Sets all the thumbnails for the content, however only 1 will be active */}
             <ul className="carousel-slides"
                 style={{ "--current-slide": `${current}` }}>
                 {children.map((slide, index) => (
@@ -48,7 +50,7 @@ function Carousel({ children = [], height, updateActivityData }) {
                     </li>
                 ))}
             </ul>
-
+            {/* Controls for the carousel buttons */}
             <div className="carousel-controls">
                 <motion.div
                     className="carousel-control is-prev"
@@ -61,7 +63,6 @@ function Carousel({ children = [], height, updateActivityData }) {
                     </div>
                     <br></br>
                 </motion.div>
-
                 <motion.div
                     className="carousel-control is-next"
                     onClick={() => goToSlide(current + 1)}
@@ -74,7 +75,7 @@ function Carousel({ children = [], height, updateActivityData }) {
                     <br></br>
                 </motion.div>
             </div>
-
+            {/* Controls for the carousel dots underneath the thumbnail */}
             <ul className="carousel-dots">
                 {children.map((slide, index) => (
                     <li

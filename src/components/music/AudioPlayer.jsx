@@ -16,6 +16,7 @@ import audioFile from "../content/audio/Placeholder.mp3"
 import audioThumb from "../content/audio/testost_thumb.jpg"
 
 const formWaveSurferOptions = (ref) => ({
+    // Set WaveSurfer options
     container: ref,
     waveColor: '#ccc',
     progressColor: '#0178ff',
@@ -29,14 +30,17 @@ const formWaveSurferOptions = (ref) => ({
 })
 
 function formatTime(seconds) {
+    // Format time for WaveSurfer
     let date = new Date(0);
     date.setSeconds(seconds);
     return date.toISOString().substr(11, 8);
 
 }
 export default function AudioPlayer({ display, autoplayTriggered }) {
+    // Set for Framer Motion Controls
     const mainControls = useAnimationControls();
     const btnControls = useAnimationControls();
+    // Set for WaveSurfer initialization
     const waveformRef = useRef(null);
     const wavesurfer = useRef(null);
     const [playing, setPlaying] = useState(true);
@@ -47,6 +51,7 @@ export default function AudioPlayer({ display, autoplayTriggered }) {
     const [audioFileName, setAudioFileName] = useState('');
 
     useEffect(() => {
+        // This stuff will be run on load
         const options = formWaveSurferOptions(waveformRef.current);
         wavesurfer.current = WaveSurfer.create(options);
 
@@ -58,7 +63,6 @@ export default function AudioPlayer({ display, autoplayTriggered }) {
             setDuration(wavesurfer.current.getDuration());
             setAudioFileName(audioFile.split('/').pop());
 
-            // Don't play the audio initially, wait for autoplayTriggered to change
         });
 
         wavesurfer.current.on('audioprocess', () => {
@@ -80,17 +84,17 @@ export default function AudioPlayer({ display, autoplayTriggered }) {
             wavesurfer.current.play();
             setPlaying(true); // Set playing state to true
         }
-    }, [autoplayTriggered]); // Add autoplayTriggered to dependency array
-
-
+    }, [autoplayTriggered]); // If autoplayTriggered changes, run this useEffect
 
     useEffect(() => {
+        // Framer motion stuff on click changes
         mainControls.start({
             opacity: [0, 1],
         });
     }, [mainControls, display]);
 
     useEffect(() => {
+        // Framer motion stuff on click changes
         btnControls.start({
             y: ['110%', '0%'],
         });
@@ -119,7 +123,9 @@ export default function AudioPlayer({ display, autoplayTriggered }) {
     const handleVolumeDown = () => {
         handleVolumeChange(Math.max(volume - 0.1, 0));
     }
+
     return (
+        // Display changes state when use click on music button
         <div className={`music-content ${display ? '' : 'hidden'}`}>
             <motion.div
                 animate={mainControls}

@@ -54,6 +54,7 @@ function Edu() {
                             justifyContent: 'center',
                             alignItems: 'center',
                         }}>
+                        {/* This method of displaying stuff is not efficient, will update this to allow better scalability when adding new content */}
                         <Grid item xs={12} sm={12} md={4}>
                             <div className="edu-selector-container">
                                 <div

@@ -29,7 +29,8 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulating a 2-second delay
+      // Set when to remove the loading state
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       setLoading(false);
     };
 

@@ -28,6 +28,7 @@ function Activities() {
     };
 
     useEffect(() => {
+        // Framer motion stuff to display content when user arrives at the section
         if (isInView) {
             mainControls.start("visible");
         }
@@ -64,6 +65,7 @@ function Activities() {
                                 ))}
                             </Carousel>
                         </Grid>
+                        {/* This part below display contents based on the current id from the array of data */}
                         <Grid item xs={12} sm={12} md={12}>
                             <div className='carousel-content'>
                                 <div className="carousel-title">
