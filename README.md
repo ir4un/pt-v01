@@ -1,12 +1,33 @@
-# React + Vite
+<a name="readme-top"></a>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-Currently, two official plugins are available:
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/ir4un/pt-v01">
+    <img src="./public/chesss.png" alt="Logo" width="80" height="80">
+  </a>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h3 align="center">project_title</h3>
 
+  <p align="center">
+    project_description
+    <br />
+    <a href="https://github.com/ir4un/pt-v01"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://ir4un.com">View Demo</a>
+    ·
+    <a href="https://github.com/ir4un/pt-v01/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    ·
+    <a href="https://github.com/ir4un/pt-v01/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+  </p>
+</div>
 
 Resources Used:
 Youtube-
@@ -29,9 +50,6 @@ Youtube-
 9. Setup a Custom Domain in Netlify in 5 Minutes - https://www.youtube.com/watch?v=bY7Tkh9Vz8I 
     
 10. Make React Audio Player with Controls & Waveform - https://www.youtube.com/watch?v=rT6GiYEIdGs
-
-   
-
 
 React Components:
 1. Carousel - https://codesandbox.io/p/sandbox/github/linkstrifer/react-carousel/tree/main/?file=%2Fsrc%2Fstyles.css
