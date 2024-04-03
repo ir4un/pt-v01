@@ -16,7 +16,7 @@
 <h3 align="center">My Personal Portfolio Website</h3>
 
   <p align="center">
-    A simple website website devoped using React.JS and SASS while being hosted on Netlify.
+    A simple website devoped using React.JS and SASS while being hosted on Netlify.
     <br />
     <a href="https://github.com/ir4un/pt-v01"><strong>Explore the docs »</strong></a>
     <br />
